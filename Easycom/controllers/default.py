@@ -19,7 +19,7 @@ g
     """
     response.flash = T("Hello World")
 
-    return dict(message=T('Welcome to EasyCommerce'))
+    return dict(message=T('EasyCommerce'))
 
 
 def user():

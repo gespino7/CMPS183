@@ -17,7 +17,7 @@ g
     if you need a simple wiki simply replace the two lines below with:
     return augitth.wiki()
     """
-    response.flash = T("Hello World")
+    response.flash = T("Hello EasyCommerce")
 
     return dict(message=T('EasyCommerce CMPS183'))
 

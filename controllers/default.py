@@ -13,13 +13,12 @@ def index():
     """
     example action using the internationalization operator T and flash
     rendered by views/default/index.html or views/generic.html
-
+g
     if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
+    return augitth.wiki()
     """
-    response.flash = T("Hello World")
-
-    return dict(message=T('Welcome to web2py!'))
+    response.flash = T("Hello EasyCommerce")
+    return dict(message=T('EasyCommerce CMPS18'))
 
 
 def user():

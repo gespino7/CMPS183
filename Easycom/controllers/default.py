@@ -18,8 +18,7 @@ g
     return augitth.wiki()
     """
     response.flash = T("Hello EasyCommerce")
-
-    return dict(message=T('EasyCommerce CMPS183'))
+    return dict(message=T('EasyCommerce CMPS18'))
 
 
 def user():

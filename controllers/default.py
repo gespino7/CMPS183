@@ -6,8 +6,6 @@
 # - index is the default action of any application
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
-# -------------------------------------------------------------------------
-
 
 def index():
     """

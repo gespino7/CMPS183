@@ -1,0 +1,54 @@
+/* create row of images */
+div#image_col1,#image_col2,#image_col3{
+    width:80%;
+    margin: 0 auto;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+    /* for testing containers
+    border-style: solid;
+    border-color: green;*/
+}
+
+/* Container for store categories */
+div#category1{
+    width:100%
+    margin: 0 auto;
+    text-align: center;
+    /* for testing containers
+    border-style: solid;
+    border-color: red;*/
+}
+
+/* Class to center images */
+.center{
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 0 auto;
+}
+
+/* Adjust container images to same height/width based on screen size */
+.container img{
+    width: 25%;
+    height: auto;
+    margin: 0 2% 5% 2%;
+    text-align: center;
+}
+
+/* Extends underline past text */
+u:after {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0";
+}
+
+/* Class to align left within a container */
+.left_align{
+    text-align: left;
+    margin: 0 0 2% 15%;
+    font-size: 250%;
+}
+
+/* Adjust underline thickness */
+u{
+    text-decoration: none;
+    border-bottom: 4px solid black;
+}

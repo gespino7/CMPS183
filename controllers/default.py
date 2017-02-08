@@ -17,10 +17,13 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Hello World")
 
-    return dict(message=T('Welcome to web2py!'))
+    vendor = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
+    return dict(vendor=vendor)
 
+def manager():
+    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
+    return dict(vendors=vendors)
 
 def user():
     """
@@ -49,12 +52,3 @@ def download():
     """
     return response.download(request, db)
 
-
-def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
-    return service()

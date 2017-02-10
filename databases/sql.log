@@ -53,3 +53,35 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2017-02-07T23:50:27.850591
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-02-07T23:50:27.855625
+CREATE TABLE user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    payment_info CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-02-10T08:02:04.908173
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    invoice CHAR(512),
+    status CHAR(512)
+);
+success!

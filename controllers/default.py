@@ -20,7 +20,8 @@ g
     response.flash = T("Hello EasyCommerce")
     return dict(message=T('EasyCommerce Daniel'))
 
-
+def customer_orders():
+    return dict()
 def user():
     """
     exposes:

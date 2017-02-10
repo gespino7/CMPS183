@@ -23,6 +23,10 @@ db.define_table('user',
                 Field('payment_info'),
                 Field('date','datetime'),
                  format='%(name)s')
+
+
+
+
 #Validations
 db.vendor.business_name.requires = IS_NOT_IN_DB(db, db.vendor.business_name)
 db.vendor.name.requires = IS_NOT_EMPTY()

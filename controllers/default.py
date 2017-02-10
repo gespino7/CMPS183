@@ -18,8 +18,8 @@ def index():
     return auth.wiki()
     """
 
-    vendor = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
-    return dict(vendor=vendor)
+
+    return dict()
 
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
@@ -39,7 +39,7 @@ def user():
         @auth.requires_membership('group name')
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
-    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    also notice there is http://..../[app]/appadmin/manage_page.html/auth to allow administrator to manage_page.html users
     """
     return dict(form=auth())
 

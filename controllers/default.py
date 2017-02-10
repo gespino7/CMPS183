@@ -17,10 +17,14 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Hello World")
+    grid = SQLFORM.smartgrid(db.invoice)
 
-    return dict(message=T('Welcome to web2py!'))
+    return dict(grid=grid)
 
+
+def manager():
+    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
+    return dict(vendors=vendors)
 
 def user():
     """
@@ -36,7 +40,7 @@ def user():
         @auth.requires_membership('group name')
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
-    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    also notice there is http://..../[app]/appadmin/manage_page.html/auth to allow administrator to manage_page.html users
     """
     return dict(form=auth())
 
@@ -49,12 +53,3 @@ def download():
     """
     return response.download(request, db)
 
-
-def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
-    return service()

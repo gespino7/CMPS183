@@ -8,7 +8,6 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-
 def index():
     """
     example action using the internationalization operator T and flash
@@ -18,13 +17,11 @@ g
     return augitth.wiki()
     
     """
-     grid = SQLFORM.smartgrid(db.invoice)
-
+    grid = SQLFORM.smartgrid(db.invoice)
     return dict(grid=grid)
+
 def customer_orders():
     return dict()
-   
-
 
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)

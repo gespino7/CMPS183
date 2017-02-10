@@ -13,6 +13,7 @@ db.define_table('vendor',
                 Field('business_name'),
                 Field('address'),
                 Field('date','datetime'),
+                migrate=False,
                  format='%(business_name)s')
 
 #User contact info.
@@ -22,6 +23,7 @@ db.define_table('user',
                 Field('phone_num'),
                 Field('payment_info'),
                 Field('date','datetime'),
+                migrate=False,
                  format='%(name)s')
 
 db.define_table('invoice',
@@ -30,8 +32,8 @@ db.define_table('invoice',
                 Field('amount'),
                 Field('date','datetime',default=request.now),
                 Field('invoice'),
-                Field('status'))
-
+                Field('status'),
+                migrate = False)
 
 
 

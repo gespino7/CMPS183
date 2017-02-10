@@ -17,9 +17,10 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
+    grid = SQLFORM.smartgrid(db.invoice)
 
+    return dict(grid=grid)
 
-    return dict()
 
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)

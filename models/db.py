@@ -24,6 +24,14 @@ db.define_table('user',
                 Field('date','datetime'),
                  format='%(name)s')
 
+db.define_table('invoice',
+                Field('seller'),
+                Field('customer'),
+                Field('amount'),
+                Field('date','datetime',default=request.now),
+                Field('invoice'),
+                Field('status'))
+
 
 
 

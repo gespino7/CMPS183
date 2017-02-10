@@ -74,3 +74,14 @@ CREATE TABLE user(
     date TIMESTAMP
 );
 success!
+timestamp: 2017-02-10T08:02:04.908173
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    invoice CHAR(512),
+    status CHAR(512)
+);
+success!

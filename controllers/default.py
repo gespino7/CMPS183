@@ -21,7 +21,8 @@ g
     return dict(grid=grid)
 
 def customer_orders():
-    return dict()
+    invoices=db().select(db.invoice.ALL,orderby=db.invoice.date)
+    return dict(invoices=invoices)
 
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)

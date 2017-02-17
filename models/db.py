@@ -27,8 +27,9 @@ db.define_table('user',
                  format='%(name)s')
 
 db.define_table('invoice',
-                Field('seller'),
-                Field('customer'),
+                Field('vendor_id','integer'),
+                Field('user_id','integer'),
+                Field('product_id','integer'),
                 Field('amount'),
                 Field('date','datetime',default=request.now),
                 Field('invoice'),

@@ -20,9 +20,12 @@ def index():
 
     return dict()
 
+#Allow vendor to see page only when sing in.
+@auth.requires_login()
 def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
+
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
     return dict(vendors=vendors)

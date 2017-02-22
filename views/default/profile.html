@@ -1,0 +1,112 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+      <div class="jumbotron text-center">
+        {{if response.title:}}
+        <h1>{{=response.title}}
+          <small>{{=response.subtitle or ''}}</small></h1>
+        {{pass}}
+      </div>
+    </header>
+{{end}}
+
+{{if 'message' in globals():}}
+<h2>{{=message}}</h2>
+<p class="lead">{{=T('How did you get here?')}}</p>
+<ol>
+  <li>{{=T('You are successfully running web2py')}}</li>
+  <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
+  <li>{{=XML(T('Which called the function %s located in the file %s',
+    (A(request.function+'()',_href='#'),
+    A('web2py/applications/%(application)s/controllers/%(controller)s.py' % request,
+    _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
+  <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
+    A('web2py/applications/%(application)s/views/%(controller)s/index.html' % request,
+    _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
+  <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
+</ol>
+{{elif 'content' in globals():}}
+{{=content}}
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+{{block right_sidebar}}
+<div class="panel panel-info">
+  <div class="panel-heading"><h3 class="panel-title"><a class="btn-block"
+      href="{{=URL('admin','default','index')}}">
+      <i class="glyphicon glyphicon-cog"></i>
+      {{=T("admin")}}
+    </a></h3></div>
+  <div class="panel-body">
+    {{=T("Don't know what to do?")}}
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">{{=A(T("Online examples"), _href=URL('examples','default','index'))}}</li>
+    <li class="list-group-item"><a href="http://web2py.com">web2py.com</a></li>
+    <li class="list-group-item"><a href="http://web2py.com/book">{{=T('Documentation')}}</a></li>
+  </ul>
+</div>
+                        <h2>Bordered Table</h2>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Page</th>
+                                        <th>Visits</th>
+                                        <th>% New Visits</th>
+                                        <th>Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>/index.html</td>
+                                        <td>1265</td>
+                                        <td>32.3%</td>
+                                        <td>$321.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/about.html</td>
+                                        <td>261</td>
+                                        <td>33.3%</td>
+                                        <td>$234.12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/sales.html</td>
+                                        <td>665</td>
+                                        <td>21.3%</td>
+                                        <td>$16.34</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/blog.html</td>
+                                        <td>9516</td>
+                                        <td>89.3%</td>
+                                        <td>$1644.43</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/404.html</td>
+                                        <td>23</td>
+                                        <td>34.3%</td>
+                                        <td>$23.52</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/services.html</td>
+                                        <td>421</td>
+                                        <td>60.3%</td>
+                                        <td>$724.32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>/blog/post.html</td>
+                                        <td>1233</td>
+                                        <td>93.2%</td>
+                                        <td>$126.34</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+<div>
+
+</div>
+{{end}}

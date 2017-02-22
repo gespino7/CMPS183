@@ -2,12 +2,20 @@
 
 #DAL Constructor
 
+import datetime
+from gluon.tools import Auth
 db = DAL ('sqlite://storage.sqlite')
 
 #Table Constructor -> method to define new tables.
 #Vendor contact info.
+auth = Auth(db)
+auth.define_tables(username = False, signature = False)
+auth.settings.registration_requires_verification = False
+auth.settings.reset_password_requires_verification = True
+
+
 db.define_table('vendor',
-                Field('name' ),
+                Field('name'),
                 Field('email'),
                 Field('phone_num'),
                 Field('business_name'),
@@ -16,9 +24,11 @@ db.define_table('vendor',
                 migrate=False,
                  format='%(business_name)s')
 
+
+
 #User contact info.
 db.define_table('user',
-                Field('name' ),
+                Field('name'),
                 Field('email'),
                 Field('phone_num'),
                 Field('payment_info'),
@@ -31,7 +41,7 @@ db.define_table('invoice',
                 Field('user_id','integer'),
                 Field('product_id','integer'),
                 Field('amount'),
-                Field('date','datetime',default=request.now),
+                Field('created_on','datetime',default=datetime.datetime.utcnow()),
                 Field('invoice'),
                 Field('status'),
                 migrate = False)

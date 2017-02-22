@@ -7,7 +7,6 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
-
 def index():
     """
     example action using the internationalization operator T and flash

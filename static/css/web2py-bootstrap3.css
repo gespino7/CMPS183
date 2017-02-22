@@ -106,6 +106,7 @@ select.autocomplete {
 }
 .background {
     background: url("../images/background.jpg") no-repeat center center;
+    widows: 400 xp;;
 }
 body {
     padding-top: 60px;

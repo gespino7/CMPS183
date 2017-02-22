@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 #DAL Constructor
 
 import datetime
 from gluon.tools import Auth
 db = DAL ('sqlite://storage.sqlite')
 
+from gluon.tools import Auth
+auth = Auth(db)
+auth.define_tables()
 #Table Constructor -> method to define new tables.
 #Vendor contact info.
 auth = Auth(db)
@@ -68,5 +72,7 @@ db.user.payment_info.requires = IS_NOT_EMPTY()
 
 
 
+#auth.settings.extra_fields['auth_user']= [Field('phone')]
+auth.define_tables(username=False,signature=False,migrate =False)
 
 

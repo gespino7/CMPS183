@@ -264,5 +264,8 @@ footer {
 }
 .bg-primary {
   color: #fff;
-  background-color: #ddebee;
+  background-color: #bad3d8;
+}
+.bg-portfolio{
+  background-color:#f5fbfc;
 }

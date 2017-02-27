@@ -53,3 +53,16 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2017-02-27T10:30:01.703000
+CREATE TABLE listing(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    date_added TIMESTAMP,
+    item_name CHAR(512),
+    description CHAR(512),
+    image CHAR(512),
+    price DOUBLE,
+    status CHAR(1),
+    category CHAR(512)
+);
+success!

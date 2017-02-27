@@ -22,10 +22,27 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Hello World")
+    categories = get_categories()
+    listings = get_listings()
+    num_listings = len(listings)
+    return dict(categories=categories,listings=listings,num_listings=num_listings)
 
-    return dict(message=T('Welcome to web2py!'))
+def get_listings():
+    return db(db.listing).select().sort(lambda p: p.date_added, reverse=True)
 
+def get_categories():
+    return db(db.listing).select().sort(lambda p: p.category, reverse=True)
+
+@auth.requires_login()
+def add():
+    listing = db.post[request.args(0)]
+    type = db.post[request.args(0)]
+    form = SQLFORM(db.listing, listing, type,
+                   showid=False,
+                   deletable=True)
+    if form.process().accepted:
+        response.flash = 'Listing Accepted'
+    return dict(form=form)
 
 def user():
     """

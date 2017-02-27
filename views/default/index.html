@@ -13,56 +13,44 @@
     </header>
 {{end}}
 
+{{=A('Add item',_class='btn btn-info',_href=URL('EasyCommerce','default','add'))}}
+</br>
+
 <!--Creates a container for a single category. Each subsequent div represents
     another row of clickable images in the vendor's store. Needs database
     for image/price/name retrieval. Also adjust height. -->
-<div id="category1">
-    <h2 class="left_align"><u>Food</u></h2>
-    <div id="image_col1" class="container">
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
+<!-- Need to add javascript for image size adjustment -->
+<html>
 
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
+{{current = 0}}
+{{i = 0}}
+{{for type in categories:}}
+    <div id="category1">
+        {{if type.category != current:}}
+            {{current = type.category}}
+            <h2 class="left_align"><u>{{=type.category}}</u></h2>
+            {{for listing in listings:}}
+                {{if i%4==0 or i==0:}}
+                    <div id="image_col1" class="container">
+                {{pass}}
 
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
+                {{if current == listing.category:}}
+                    <a href="{{=URL('EasyCommerce','default','vendor')}}">
+                        <img class="center" src="{{=URL('download', args=listing.image)}}" />
+                    </a>
+                {{pass}}
+
+                {{i = i+1}}
+                {{if i%4==0:}}
+                    </div>
+                {{pass}}
+            {{pass}}
+            {{i = 0}}
+        {{pass}}
     </div>
-    <div id="image_col2" class="container">
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
+{{pass}}
 
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
+<br/><br/><br/>
+</html>
 
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
-    </div>
-    <div id="image_col3" class="container">
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
-
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
-
-        <a href="{{=URL('EasyCommerce','default','vendor')}}">
-            <img class="center" src="{{=URL('static', 'images', args='bbqpork.jpg')}}"/>
-        </a>
-    </div>
-</div>
-
-<!-- example for button linking-->
-</br></br>
-<a href="{{=URL('EasyCommerce','default','user')}}">
-<button type="button" class="btn btn-info">
-    Login
-</button>
-</a>
+<!-- Web2py footer? -->

@@ -17,9 +17,33 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
 
+    return dict()
+
+#Allow vendor to see page only when sing in.
+@auth.requires_login()
+def vendor():
+    grid = SQLFORM.smartgrid(db.invoice)
+    return  dict(grid = grid)
+
+def manager():
+    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
+    return dict(vendors=vendors)
+def card():
+    fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
+    form = SQLFORM(db.cc, fields=fields)
+    #if form.process().accepted:
+     #   response.flash = 'Your credit card is confirmed'
+      #  redirect(URL("index"))
+    return dict(form=form)
+
+@auth.requires_login()
+def manage():
+    
+    fields = [db.cc.first_name, db.cc.last_name, db.cc.card_number,  db.cc.security_code, db.cc.exp_date]
+    
+    grid = SQLFORM.grid(fields=fields,  create=False, details=True, csv=False, editable=True, deletable=True, searchable=False)
+    return dict(grid=grid)
 
 def user():
     """
@@ -35,7 +59,7 @@ def user():
         @auth.requires_membership('group name')
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
-    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    also notice there is http://..../[app]/appadmin/manage_page.html/auth to allow administrator to manage_page.html users
     """
     return dict(form=auth())
 
@@ -47,15 +71,3 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-
-
-def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
-    return service()
-
-

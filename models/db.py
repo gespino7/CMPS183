@@ -3,7 +3,7 @@
 
 #DAL Constructor
 
-db = DAL ('sqlite://storage.sqlite')
+db = DAL ('sqlite://storage.sqlite', migrate= False)
 
 from gluon.tools import Auth
 auth = Auth(db)

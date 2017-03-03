@@ -61,3 +61,13 @@ db.user.payment_info.requires = IS_NOT_EMPTY()
 
 #auth.settings.extra_fields['auth_user']= [Field('phone')]
 auth.define_tables(username=False,signature=False,migrate =False)
+
+
+
+
+
+
+
+
+
+

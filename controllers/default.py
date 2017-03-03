@@ -26,15 +26,16 @@ def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
 
-def manager():
-    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
-    return dict(vendors=vendors)
+
 def card():
     fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
     form = SQLFORM(db.cc, fields=fields)
-    #if form.process().accepted:
-     #   response.flash = 'Your credit card is confirmed'
-      #  redirect(URL("index"))
+    if form.process().accepted:
+        response.flash = 'Your credit card is confirmed'
+
+    else:
+        response.flash = 'please fill out your credit card information'
+      # redirect(URL("index"))
     return dict(form=form)
 
 

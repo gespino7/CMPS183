@@ -31,19 +31,13 @@ def manager():
     return dict(vendors=vendors)
 def card():
     fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
-    form = SQLFORM(db.cc, fields=fields)
-    #if form.process().accepted:
-     #   response.flash = 'Your credit card is confirmed'
-      #  redirect(URL("index"))
+    form = SQLFORM(db.cc, fields)
+    if form.process(keepvalues=True).accepted:
+       response.flash = 'Your credit card is confirmed'
+      # redirect(URL("index"))
     return dict(form=form)
 
-@auth.requires_login()
-def manage():
-    
-    fields = [db.cc.first_name, db.cc.last_name, db.cc.card_number,  db.cc.security_code, db.cc.exp_date]
-    
-    grid = SQLFORM.grid(fields=fields,  create=False, details=True, csv=False, editable=True, deletable=True, searchable=False)
-    return dict(grid=grid)
+
 
 def user():
     """

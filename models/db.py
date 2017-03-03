@@ -32,8 +32,8 @@ db.define_table('invoice',
                 Field('seller'),
                 Field('customer'),
                 Field('amount'),
-                Field('date','datetime',default=request.now),
                 Field('item_id'),
+                Field('date','datetime',default=request.now),
                 Field('status'))
 
 db.define_table('item',
@@ -43,6 +43,7 @@ db.define_table('item',
                 Field('price','double'),
                 Field('amount','integer')
                 )
+
 
 
 #Validations

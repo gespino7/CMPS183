@@ -14,7 +14,6 @@ def index():
 g
     if you need a simple wiki simply replace the two lines below with:
     return augitth.wiki()
-    
     """
     grid = SQLFORM.smartgrid(db.invoice)
     return dict(grid=grid)

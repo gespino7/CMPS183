@@ -48,3 +48,44 @@ CREATE TABLE vendor(
     address CHAR(512),
     date TIMESTAMP
 );
+timestamp: 2017-03-03T10:21:57.148000
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    item_id CHAR(512),
+    status CHAR(512)
+);
+timestamp: 2017-03-03T10:22:19.095000
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    description TEXT,
+    image CHAR(512),
+    price DOUBLE,
+    amount INTEGER
+);
+success!
+timestamp: 2017-03-03T10:26:26.575000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-03-03T10:31:56.069000
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    item_id CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!

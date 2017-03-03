@@ -30,9 +30,12 @@ def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
 
+
+@auth.requires_login()
 def manager():
-    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
-    return dict(vendors=vendors)
+    invoices = db().select(db.invoice.ALL, orderby=db.invoice.date)
+    return dict(invoices=invoices)
+
 
 
 def user():

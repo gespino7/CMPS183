@@ -33,8 +33,17 @@ db.define_table('invoice',
                 Field('customer'),
                 Field('amount'),
                 Field('date','datetime',default=request.now),
-                Field('invoice'),
+                Field('item_id'),
                 Field('status'))
+
+db.define_table('item',
+                Field('title'),
+                Field('description','text'),
+                Field('image','upload'),
+                Field('price','double'),
+                Field('amount','integer')
+                )
+
 
 #Validations
 db.vendor.business_name.requires = IS_NOT_IN_DB(db, db.vendor.business_name)

@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 
+
 #DAL Constructor
 
-db = DAL ('sqlite://storage.sqlite')
+db = DAL ('sqlite://storage.sqlite', migrate= False)
 
+from gluon.tools import Auth
+auth = Auth(db)
+auth.define_tables()
 #Table Constructor -> method to define new tables.
 #Vendor contact info.
 db.define_table('vendor',
@@ -50,6 +54,16 @@ db.user.email.requires = IS_EMAIL()
 db.user.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',
                             error_message ='not a valid phone number.')
 db.user.payment_info.requires = IS_NOT_EMPTY()
+
+
+
+
+
+#auth.settings.extra_fields['auth_user']= [Field('phone')]
+auth.define_tables(username=False,signature=False,migrate =False)
+
+
+
 
 
 

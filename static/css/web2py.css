@@ -63,6 +63,7 @@ audio {width:200px}
     border-top:1px #DEDEDE solid;
 }
 .header {
+    background: url("../images/background.jpg");
         /* background:<fill here for header image>; */
 }
 

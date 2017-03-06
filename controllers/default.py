@@ -13,13 +13,17 @@ def index():
     """
     example action using the internationalization operator T and flash
     rendered by views/default/index.html or views/generic.html
-
+g
     if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
+    return augitth.wiki()
+    
     """
-
     return dict()
 
+
+def customer_orders():
+    return dict()
+   
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
@@ -37,6 +41,10 @@ def card():
         response.flash = 'please fill out your credit card information'
       # redirect(URL("index"))
     return dict(form=form)
+
+def manager():
+
+    return dict()
 
 
 
@@ -66,3 +74,4 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+

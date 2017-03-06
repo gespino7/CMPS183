@@ -3,7 +3,9 @@
 
 #DAL Constructor
 
+
 db = DAL ('sqlite://storage.sqlite',migrate=False)
+
 
 from gluon.tools import Auth
 auth = Auth(db)
@@ -61,6 +63,7 @@ db.user_.name.requires = IS_NOT_IN_DB(db, db.user_.name)
 db.user_.email.requires = IS_EMAIL()
 db.user_.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',
                             error_message ='not a valid phone number.')
+
 db.user_.payment_info.requires = IS_NOT_EMPTY()
 ###############credit card
 db.cc.first_name.requires = IS_NOT_EMPTY()
@@ -73,5 +76,19 @@ db.cc.exp_date.requires = IS_MATCH('\d{2}/\d{2}',
                             error_message ='not a valid expiration date.')
 #user_name=False
 
+db.user.payment_info.requires = IS_NOT_EMPTY()
+
+
+
+#auth.settings.extra_fields['auth_user']= [Field('phone')]
 auth.settings.extra_fields['auth_user_']= [Field('phone')]
-auth.define_tables(signature=False,migrate =False)
+auth.define_tables(username=False,signature=False,migrate =False)
+
+
+
+
+
+
+
+
+

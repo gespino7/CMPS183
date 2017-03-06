@@ -18,11 +18,10 @@ g
     return augitth.wiki()
     
     """
+    return dict()
 
-     grid = SQLFORM.smartgrid(db.invoice)
-    return dict(grid=grid)
 
-  def customer_orders():
+def customer_orders():
     return dict()
    
 #Allow vendor to see page only when sing in.
@@ -32,8 +31,8 @@ def vendor():
     return  dict(grid = grid)
 
 def manager():
-    vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
-    return dict(vendors=vendors)
+
+    return dict()
 
 
 def user():

@@ -31,6 +31,7 @@ To Be Implemented
 * Akhshaya Baskar (abaskar@ucsc.edu)
 * Michaela Molina (mijmolin@ucsc.edu)
 * Jiayuan Hu (jhu125@ucsc.edu)
+* Ali Alkaheli (aalkahel@ucsc.edu)
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)

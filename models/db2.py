@@ -43,3 +43,24 @@ db.listing.date_added.requires = IS_NOT_EMPTY()
 db.listing.date_added.writable = False
 db.listing.seller.writable = False
 db.listing._plural = " "
+
+db.define_table('vendor_info',
+                Field('vendor_name'),
+                Field('email'),
+                Field('phone_number'),
+                Field('address'),
+                Field('city'),
+                Field('state'),
+                Field('zipcode'),
+                Field('country'),
+                )
+
+db.vendor_info.vendor_name.requires = IS_NOT_EMPTY()
+db.vendor_info.email.requires = IS_NOT_EMPTY(), IS_EMAIL()
+db.vendor_info.phone_number.requires = IS_NOT_EMPTY(), IS_MATCH('^1?((-)\d{3}-?|\(\d{3}\))\d{3}-?\d{4}$',error_message='not a phone number')
+db.vendor_info.address.requires = IS_NOT_EMPTY()
+db.vendor_info.address.value = "test"
+db.vendor_info.city.requires = IS_NOT_EMPTY()
+db.vendor_info.state.requires = IS_NOT_EMPTY()
+db.vendor_info.country.requires = IS_NOT_EMPTY()
+db.vendor_info._plural = " "

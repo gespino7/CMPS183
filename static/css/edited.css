@@ -1,8 +1,10 @@
 /* create row of images */
 div#img_row{
-    width:100%;
+    width:80%;
     margin: 0 auto;
     display: inline-block;
+    text-align: center;
+    white-space: nowrap;
     /* for testing containers
     border-style: solid;
     border-color: green;*/
@@ -10,11 +12,10 @@ div#img_row{
 
 /* Container for store categories */
 div#section{
-    width:100%;
+    width:90%;
     margin: 0 auto;
-    display: inline-block;
-    text-align: right;
-    float:right;
+    display: block;
+    text-align: center;
     /* for testing containers
     border-style: solid;
     border-color: red;*/
@@ -35,6 +36,13 @@ div#section{
     text-align: center;
 }
 
+div#img_block{
+    width: 20%;
+    display: inline-block;
+    float: left;
+    border-style: solid;
+}
+
 /* Extends underline past text */
 u:after {
     content: "\00a0\00a0\00a0\00a0\00a0\00a0";
@@ -43,7 +51,7 @@ u:after {
 /* Class to align left within a container */
 .left_align{
     text-align: left;
-    margin: 0 0 2% 18%;
+    margin: 0 0 2% 10%;
     font-size: 250%;
 }
 

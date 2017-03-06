@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+<link href="{{=URL('static', 'css/edited.css')}}" rel="stylesheet" type="text/css" />
+
+<html>
+<div id = "section">
+    <h2>{{=listing.item_name}} {{=listing.price}}</h2>
+    <h4>[{{=listing.category}}]</h4>
+    <hr>
+    <img class="center" style="width:50%;" src="{{=URL('download', args=listing.image)}}" /><br/>
+    {{=listing.description}}<br/>
+</div>
+</html>

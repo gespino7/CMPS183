@@ -1,5 +1,6 @@
 {{extend 'layout.html'}}
-<link href="{{=URL('static', 'css/vendor.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{=URL('static', 'css/new.css')}}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Rubik|Open+Sans" rel="stylesheet">
 
 <!--Banner for store, figure out how to adjust this-->
 {{block header}}
@@ -13,9 +14,6 @@
     </header>
 {{end}}
 
-{{=A('Add item',_class='btn btn-info',_href=URL('EasyCommerce','default','add'))}}
-</br>
-
 <!--Creates a container for a single category. Each subsequent div represents
     another row of clickable images in the vendor's store. Needs database
     for image/price/name retrieval. Also adjust height. -->
@@ -25,32 +23,47 @@
 {{current = 0}}
 {{i = 0}}
 {{for type in categories:}}
-    <div id="category1">
-        {{if type.category != current:}}
+    {{if type.category != current:}}
+        <div id="section">
             {{current = type.category}}
             <h2 class="left_align"><u>{{=type.category}}</u></h2>
             {{for listing in listings:}}
-                {{if i%4==0 or i==0:}}
-                    <div id="image_col1" class="container">
-                {{pass}}
-
                 {{if current == listing.category:}}
-                    <a href="{{=URL('EasyCommerce','default','vendor')}}">
-                        <img class="center" src="{{=URL('download', args=listing.image)}}" />
-                    </a>
-                {{pass}}
+                    {{if i%3==0 or i==0:}}
+                        <div id="img_row" class="container">
+                    {{pass}}
 
-                {{i = i+1}}
-                {{if i%4==0:}}
+                    <div id="img_block">
+                        <a href="{{=URL('EasyCommerce','default','item',args=[listing.id])}}">
+                            <img class="center" src="{{=URL('download', args=listing.image)}}" />
+                        <p class="left vertical">
+                            {{=listing.item_name}}
+                        </p>
+                        <p class="right vertical">
+                            ${{=listing.price}}
+                        </p>
+                        </a>
                     </div>
+
+                    {{i = i+1}}
+                    <!-- Close row div if at end of row-->
+                    {{if i%3==0:}}
+                        </div>
+                    {{pass}}
                 {{pass}}
             {{pass}}
-            {{i = 0}}
-        {{pass}}
-    </div>
-{{pass}}
 
-<br/><br/><br/>
+            <!-- Close row div if at end of category but not end of row-->
+            {{if i%3!=0:}}
+                </div>
+            {{pass}}
+            {{i = 0}}
+        </div>
+    {{pass}}
+{{pass}}
+</br></br>
+{{=A('Add item',_class='btn btn-info',_href=URL('EasyCommerce','default','add'))}}
+</br>
 </html>
 
 <!-- Web2py footer? -->

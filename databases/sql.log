@@ -66,3 +66,16 @@ CREATE TABLE listing(
     category CHAR(512)
 );
 success!
+timestamp: 2017-03-03T09:42:22.734000
+CREATE TABLE vendor_info(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vendor_name CHAR(512),
+    email CHAR(512),
+    phone_number CHAR(512),
+    address CHAR(512),
+    city CHAR(512),
+    state CHAR(512),
+    zipcode CHAR(512),
+    country CHAR(512)
+);
+success!

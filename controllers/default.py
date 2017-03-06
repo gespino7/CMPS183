@@ -33,15 +33,34 @@ def get_listings():
 def get_categories():
     return db(db.listing).select().sort(lambda p: p.category, reverse=True)
 
+def item():
+    listing = db.listing[request.args(0)]
+    listings = db(db.listing).select()
+    return dict(listing=listing,listings=listings)
+
+def map():
+    return dict()
+
 @auth.requires_login()
 def add():
-    listing = db.post[request.args(0)]
-    type = db.post[request.args(0)]
+    listing = db.listing[request.args(0)]
+    type = db.listing[request.args(0)]
     form = SQLFORM(db.listing, listing, type,
-                   showid=False,
-                   deletable=True)
+                   showid=False)
     if form.process().accepted:
         response.flash = 'Listing Accepted'
+    return dict(form=form)
+
+def maptest():
+    return dict()
+
+@auth.requires_login()
+def add_vendor():
+    vendor_info = db.vendor_info[request.args(0)]
+    form = SQLFORM(db.vendor_info, vendor_info,
+                   showid=False)
+    if form.process().accepted:
+        response.flash = 'Vendor Added'
     return dict(form=form)
 
 def user():

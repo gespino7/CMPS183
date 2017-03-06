@@ -13,13 +13,18 @@ def index():
     """
     example action using the internationalization operator T and flash
     rendered by views/default/index.html or views/generic.html
-
+g
     if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
+    return augitth.wiki()
+    
     """
 
-    return dict()
+     grid = SQLFORM.smartgrid(db.invoice)
+    return dict(grid=grid)
 
+  def customer_orders():
+    return dict()
+   
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
@@ -29,6 +34,7 @@ def vendor():
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)
     return dict(vendors=vendors)
+
 
 def user():
     """
@@ -56,4 +62,6 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+
+
 

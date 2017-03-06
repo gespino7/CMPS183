@@ -76,7 +76,7 @@ db.cc.exp_date.requires = IS_MATCH('\d{2}/\d{2}',
                             error_message ='not a valid expiration date.')
 #user_name=False
 
-db.user.payment_info.requires = IS_NOT_EMPTY()
+db.user_.payment_info.requires = IS_NOT_EMPTY()
 
 
 

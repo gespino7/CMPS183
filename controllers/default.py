@@ -30,9 +30,22 @@ def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
 
+
+def card():
+    fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
+    form = SQLFORM(db.cc, fields=fields)
+    if form.process().accepted:
+        response.flash = 'Your credit card is confirmed'
+
+    else:
+        response.flash = 'please fill out your credit card information'
+      # redirect(URL("index"))
+    return dict(form=form)
+
 def manager():
 
     return dict()
+
 
 
 def user():
@@ -61,6 +74,4 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-
-
 

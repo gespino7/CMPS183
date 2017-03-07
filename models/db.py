@@ -28,13 +28,7 @@ db.define_table('user',
                 Field('date','datetime'),
                  format='%(name)s')
 
-db.define_table('invoice',
-                Field('seller'),
-                Field('customer'),
-                Field('amount'),
-                Field('item_id'),
-                Field('date','datetime',default=request.now),
-                Field('status'))
+
 
 db.define_table('item',
                 Field('title'),
@@ -43,6 +37,16 @@ db.define_table('item',
                 Field('price','double'),
                 Field('amount','integer')
                 )
+
+db.define_table('invoice',
+                Field('seller_id'),
+                Field('customer_id'),
+                Field('item_id'),
+                Field('amount'),
+                Field('date','datetime',default=request.now),
+                Field('status',default = 'pending')
+                )
+
 
 
 
@@ -61,6 +65,7 @@ db.user.email.requires = IS_EMAIL()
 db.user.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',
                             error_message ='not a valid phone number.')
 db.user.payment_info.requires = IS_NOT_EMPTY()
+db.invoice.status.requires = IS_IN_SET(['pending','confirmed'])
 
 
 

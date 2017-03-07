@@ -89,3 +89,101 @@ CREATE TABLE invoice(
     status CHAR(512)
 );
 success!
+timestamp: 2017-03-06T10:27:54.084300
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:02.304652
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:10.093226
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:43.053858
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:31:03.034881
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:31:42.910223
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:33:55.841083
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:34:03.661420
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:34:55.787530
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:36:54.255914
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:38:06.155992
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:38:13.998740
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:39:28.226228
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-03-06T10:39:48.942928
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:41:44.188672
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:41:53.401254
+CREATE TABLE invoie(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T10:42:31.595406
+CREATE TABLE invoices(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T10:50:50.048757
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:51:32.301430
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:54:53.824795
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:57:45.650478
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:58:30.031861
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:58:36.761658
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:59:31.853650
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:59:42.543537
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T11:00:56.114324
+CREATE TABLE invoice3(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T11:01:54.871050
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!

@@ -15,11 +15,19 @@ g
     if you need a simple wiki simply replace the two lines below with:
     return augitth.wiki()
     """
-    grid = SQLFORM.smartgrid(db.invoice)
-    return dict(grid=grid)
+    # grid = SQLFORM.smartgrid(db.invoice)
+    # return dict(grid = grid)
+    return dict()
 
+@auth.requires_login()
 def customer_orders():
-    invoices=db().select(db.invoice.ALL,orderby=db.invoice.date)
+    if request.vars['status'] and request.vars['status']!="all":
+        invoices = db((db.invoice.seller_id == auth.user_id) & (db.invoice.status == request.vars['status'])).select(
+            orderby=db.invoice.date)
+        print ("hello" + request.vars['status'])
+    else:
+        invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+        print ("no status")
     return dict(invoices=invoices)
 
 
@@ -32,8 +40,19 @@ def vendor():
 
 @auth.requires_login()
 def manager():
-    invoices = db().select(db.invoice.ALL, orderby=db.invoice.date)
+    invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
     return dict(invoices=invoices)
+
+@auth.requires_login()
+def status_update():
+    if request.vars['status']:
+        return
+    invoice = db.invoice[request.vars['order_id']]
+    if invoice.status == 'pending':
+        invoice.update_record(status = "confirmed")
+    else:
+        invoice.update_record(status = "pending")
+    return invoice.status
 
 
 

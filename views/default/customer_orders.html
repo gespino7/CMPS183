@@ -38,7 +38,7 @@
 </head>
 <body>
    <div class="container">
-  <h2>Customer Orders</h2>
+  <h2>{{=db.auth_user[auth.user_id].first_name}}'s Customer Orders</h2>
   <p>Below are orders of past 1 month</p>
        <select id="select_id1">
             <option value="">Select order status:</option>

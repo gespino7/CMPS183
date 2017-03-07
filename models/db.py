@@ -29,7 +29,6 @@ db.define_table('user',
                  format='%(name)s')
 
 
-
 db.define_table('item',
                 Field('title'),
                 Field('description','text'),
@@ -46,9 +45,6 @@ db.define_table('invoice',
                 Field('date','datetime',default=request.now),
                 Field('status',default = 'pending')
                 )
-
-
-
 
 #Validations
 db.vendor.business_name.requires = IS_NOT_IN_DB(db, db.vendor.business_name)

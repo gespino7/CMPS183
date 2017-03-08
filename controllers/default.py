@@ -7,8 +7,6 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
-
-
 def index():
     """
     example action using the internationalization operator T and flash
@@ -16,20 +14,47 @@ def index():
 g
     if you need a simple wiki simply replace the two lines below with:
     return augitth.wiki()
-    
+
     """
+    # grid = SQLFORM.smartgrid(db.invoice)
+    # return dict(grid = grid)
     return dict()
 
-
+@auth.requires_login()
 def customer_orders():
-    return dict()
-   
+    if request.vars['status'] and request.vars['status']!="all":
+        invoices = db((db.invoice.seller_id == auth.user_id) & (db.invoice.status == request.vars['status'])).select(
+            orderby=db.invoice.date)
+        print ("hello" + request.vars['status'])
+    else:
+        invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+        print ("no status")
+    return dict(invoices=invoices)
+
+
+
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
 
+
+@auth.requires_login()
+def manager():
+    invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+    return dict(invoices=invoices)
+
+@auth.requires_login()
+def status_update():
+    if request.vars['status']:
+        return
+    invoice = db.invoice[request.vars['order_id']]
+    if invoice.status == 'pending':
+        invoice.update_record(status = "confirmed")
+    else:
+        invoice.update_record(status = "pending")
+    return invoice.status
 
 def card():
     fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
@@ -42,9 +67,7 @@ def card():
       # redirect(URL("index"))
     return dict(form=form)
 
-def manager():
 
-    return dict()
 
 
 
@@ -74,4 +97,6 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+
+
 

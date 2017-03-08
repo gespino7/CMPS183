@@ -37,10 +37,15 @@
                 <a href="#top" onclick=$("#menu-close").click();>Easy Commerce</a>
             </li>
             <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
+                <a href="{{=URL('default','manager')}}" onclick=$("#menu-close").click();>My Dashboard</a>
             </li>
              <li>
-                <a href="/EasyCommerce/default/user.html" onclick=$("#menu-close").click();>Sign in</a>
+                 {{if auth.user_id:}}
+                     <a href="{{=URL('default','user',args=['logout'])}}" onclick=$("#menu-close").click();>Sign out</a>
+                 {{else:}}
+                    <a href="{{=URL('default','user',args=['login'])}}" onclick=$("#menu-close").click();>Sign in</a>
+                 {{pass}}
+
             </li>
             <li>
                 <a href="#about" onclick=$("#menu-close").click();>About</a>

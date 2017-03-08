@@ -4,7 +4,7 @@
 #DAL Constructor
 
 
-db = DAL ('sqlite://storage.sqlite',migrate=False)
+db = DAL ('sqlite://storage.sqlite',migrate = False)
 
 
 from gluon.tools import Auth
@@ -29,6 +29,25 @@ db.define_table('user_',
                 Field('payment_info'),
                 Field('date','datetime'),
                  format='%(name)s')
+
+
+
+db.define_table('item',
+                Field('title'),
+                Field('description','text'),
+                Field('image','upload'),
+                Field('price','double'),
+                Field('amount','integer')
+                )
+
+db.define_table('invoice',
+                Field('seller_id'),
+                Field('customer_id'),
+                Field('item_id'),
+                Field('amount'),
+                Field('date','datetime',default=request.now),
+                Field('status',default = 'pending')
+                )
 
 db.define_table('invoice_',
                 Field('seller'),
@@ -64,6 +83,10 @@ db.user_.email.requires = IS_EMAIL()
 db.user_.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',
                             error_message ='not a valid phone number.')
 
+db.user.payment_info.requires = IS_NOT_EMPTY()
+db.invoice.status.requires = IS_IN_SET(['pending','confirmed'])
+
+
 db.user_.payment_info.requires = IS_NOT_EMPTY()
 ###############credit card
 db.cc.first_name.requires = IS_NOT_EMPTY()
@@ -81,6 +104,7 @@ db.user_.payment_info.requires = IS_NOT_EMPTY()
 
 
 #auth.settings.extra_fields['auth_user']= [Field('phone')]
+
 auth.settings.extra_fields['auth_user_']= [Field('phone')]
 auth.define_tables(username=False,signature=False,migrate =False)
 

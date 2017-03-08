@@ -76,7 +76,7 @@ def create_post():
 
     if form.process(keepvalues=True).accepted:
        response.flash = 'comment accepted'
-       redirect(URL('index'))
+       #redirect(URL('index'))
     elif form.errors:
        response.flash = 'please complete your post'
     else:

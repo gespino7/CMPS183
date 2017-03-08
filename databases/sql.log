@@ -237,3 +237,13 @@ CREATE TABLE vendor(
     address CHAR(512),
     date TIMESTAMP
 );
+timestamp: 2017-03-08T11:28:05.208817
+CREATE TABLE cc(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    card_number CHAR(512),
+    security_code CHAR(512),
+    exp_date CHAR(512)
+);
+success!

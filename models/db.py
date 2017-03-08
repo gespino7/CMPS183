@@ -56,7 +56,6 @@ db.define_table('invoice_',
                 Field('date','datetime',default=request.now),
                 Field('invoice'),
                 Field('status'))
-
 db.define_table('cc',
                 Field('first_name'),
                 Field('last_name'),

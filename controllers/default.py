@@ -61,9 +61,10 @@ def card():
     form = SQLFORM(db.cc, fields=fields)
     if form.process().accepted:
         response.flash = 'Your credit card is confirmed'
-
+    elif form.errors:
+        response.flash = 'please complete your changes'
     else:
-        response.flash = 'please fill out your credit card information'
+        response.flash = 'Please edit form'
       # redirect(URL("index"))
     return dict(form=form)
 

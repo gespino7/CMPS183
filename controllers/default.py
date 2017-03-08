@@ -33,6 +33,13 @@ def get_listings():
 def get_categories():
     return db(db.listing).select().sort(lambda p: p.category, reverse=True)
 
+def image_test():
+    categories = get_categories()
+    listings = get_listings()
+    num_listings = len(listings)
+    return dict(categories=categories,listings=listings,num_listings=num_listings)
+
+
 def item():
     listing = db.listing[request.args(0)]
     listings = db(db.listing).select()

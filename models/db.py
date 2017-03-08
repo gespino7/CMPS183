@@ -83,7 +83,7 @@ db.user_.email.requires = IS_EMAIL()
 db.user_.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',
                             error_message ='not a valid phone number.')
 
-db.user.payment_info.requires = IS_NOT_EMPTY()
+db.user_.payment_info.requires = IS_NOT_EMPTY()
 db.invoice.status.requires = IS_IN_SET(['pending','confirmed'])
 
 

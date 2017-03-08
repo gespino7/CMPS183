@@ -11,7 +11,6 @@ auth.define_tables()
 #Table Constructor -> method to define new tables.
 #Vendor contact info.
 db.define_table('vendor',
-                Field('name' ),
                 Field('email'),
                 Field('phone_num'),
                 Field('business_name'),
@@ -41,7 +40,6 @@ db.define_table('invoice',
 
 #Validations
 db.vendor.business_name.requires = IS_NOT_IN_DB(db, db.vendor.business_name)
-db.vendor.name.requires = IS_NOT_EMPTY()
 db.vendor.email.requires = IS_EMAIL()
 #Regex for phone numbers validation-> (123) 234-1234.
 db.vendor.phone_num.requires = IS_MATCH('((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}',

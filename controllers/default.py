@@ -19,17 +19,19 @@ g
     
     """
 
-     grid = SQLFORM.smartgrid(db.invoice)
+    grid = SQLFORM.smartgrid(db.invoice)
     return dict(grid=grid)
 
-  def customer_orders():
+def customer_orders():
     return dict()
    
 #Allow vendor to see page only when sing in.
-@auth.requires_login()
+
 def vendor():
-    grid = SQLFORM.smartgrid(db.invoice)
-    return  dict(grid = grid)
+    #grid = SQLFORM.smartgrid(db.vendor)
+    vendors = db().select(db.vendor.ALL,
+                           orderby=~db.vendor.business_name )
+    return  dict(vendors = vendors)
 
 def manager():
     vendors = db().select(db.vendor.ALL, orderby=db.vendor.business_name)

@@ -2,28 +2,27 @@
 
 ### Preface
 
+Easy Commerce is a team of  6 students currently enrolled in CMPS183 a Web Applications class. This class is an introduction
+to the design of Web Apps.
 
 ### Motivation
 
+We are developing this website because we are looking for a software solution for food shops on our campus. As a student our time is limited, we can not afford to wait in line to purchase goods. We want to build a web app that allows business to create a storefront that displays their menu and allows the customer to place orders online. The web app will notify both customer and vendor about ongoing transaction accordingly. 
 
 ### Features
-
-
-### Installation
-
+ * Allow vendor to add items.
+ * Notified vendor of incoming orders.
+ * Process online payments.
+ * Vendor can set time for order completion.
+ * Customer can track orders status.
 
 ### Usage
-
 
 ### Tests
 
 To Be Implemented
 
-### Directory Layout
-
 ### Future
-
-
 
 ### Contributors
 
@@ -32,6 +31,7 @@ To Be Implemented
 * Akhshaya Baskar (abaskar@ucsc.edu)
 * Michaela Molina (mijmolin@ucsc.edu)
 * Jiayuan Hu (jhu125@ucsc.edu)
+* Ali Alkaheli (aalkahel@ucsc.edu)
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)

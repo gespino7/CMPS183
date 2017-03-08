@@ -14,6 +14,7 @@ def index():
 g
     if you need a simple wiki simply replace the two lines below with:
     return augitth.wiki()
+
     """
     # grid = SQLFORM.smartgrid(db.invoice)
     # return dict(grid = grid)
@@ -29,6 +30,7 @@ def customer_orders():
         invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
         print ("no status")
     return dict(invoices=invoices)
+
 
 
 #Allow vendor to see page only when sing in.
@@ -53,6 +55,19 @@ def status_update():
     else:
         invoice.update_record(status = "pending")
     return invoice.status
+
+def card():
+    fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
+    form = SQLFORM(db.cc, fields=fields)
+    if form.process().accepted:
+        response.flash = 'Your credit card is confirmed'
+
+    else:
+        response.flash = 'please fill out your credit card information'
+      # redirect(URL("index"))
+    return dict(form=form)
+
+
 
 
 

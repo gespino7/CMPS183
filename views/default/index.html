@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="{{=URL('static','css/stylish-portfolio.css')}}" rel="stylesheet">
     <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet">
+    <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{{=URL('static','font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -44,6 +45,7 @@
                  {{else:}}
                     <a href="{{=URL('default','user',args=['login'])}}" onclick=$("#menu-close").click();>Sign in</a>
                  {{pass}}
+
             </li>
             <li>
                 <a href="#about" onclick=$("#menu-close").click();>About</a>
@@ -87,7 +89,7 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>Our Services</h2>
                     <hr class="small">
-                    <div class="row">
+                    <div class="row"><!-- virtual shopping cat, electronic payments (options), location/navigation services, analytics for vendors (items sold, hot times, best times)-->
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
@@ -95,10 +97,10 @@
                                 <i class="fa fa-bar-chart fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Vendor Analytics</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>We help your business grow by tracking your sales and returning analysis charts.</p>
+                                <a href="#section1" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -108,10 +110,10 @@
                                 <i class="fa fa-map-marker fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Navigation Services</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Make your business more accessible to local customers by sharing your location.</p>
+                                <a href="#section2" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -121,10 +123,10 @@
                                 <i class="fa fa-usd fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Online Payments</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Allow for more versatility by offering various payment options.</p>
+                                <a href="#section3" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -134,10 +136,10 @@
                                 <i class="fa fa-shopping-cart fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Online Ordering</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Keep track of customer orders on an easy to use interface.</p>
+                                <a href="#section4" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -150,9 +152,46 @@
         <!-- /.container -->
     </section>
 
+    <!--Section Details-->
+    <section id="details" class="details">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <div id="section1">
+                            <h2><strong>Vendor Analytics</strong></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a dui facilisis, malesuada sapien et, sagittis felis. Nam dictum ipsum et ligula convallis luctus. Nulla elementum vitae urna ut molestie. Cras eget nulla luctus, rhoncus eros sed, aliquam nisi. Nullam sagittis condimentum pretium. Aliquam erat volutpat. Aenean vitae lobortis sapien. Praesent condimentum ex sed lobortis vulputate. Proin mi enim, blandit ac erat at, hendrerit tempor mauris. Nam volutpat vitae augue id pellentesque.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section2">
+                            <h2><strong>Navigation Services</strong></h2>
+                            <p>Nunc interdum nibh velit, at tristique nisi bibendum in. Morbi aliquet, orci et dapibus eleifend, tellus metus volutpat neque, id auctor quam turpis eget odio. Nunc aliquet et leo non tristique. Vestibulum ac accumsan eros. Ut ut augue et erat consequat vestibulum. Suspendisse eget lacus in mi elementum accumsan. Aenean aliquam velit sit amet convallis tempus. In id felis nec nulla maximus sodales. Integer consectetur elementum convallis. Cras at tellus lobortis, posuere dui ut, condimentum diam.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section3">
+                            <h2><strong>Online Payments</strong></h2>
+                            <p>Morbi sit amet aliquam enim, eget euismod lectus. Nam mollis tincidunt libero ut aliquam. Suspendisse sed volutpat lacus. Cras aliquet vel risus sed finibus. Suspendisse porta dictum elit. Suspendisse urna dui, feugiat eget tortor ac, tincidunt accumsan tortor. Suspendisse suscipit tellus id nunc fermentum gravida. Sed vel nulla sit amet erat luctus semper in ac elit. Nullam sapien justo, iaculis ac erat quis, bibendum fermentum felis. Nulla quis turpis hendrerit, mattis tortor vel, condimentum nisi. Aenean vitae suscipit enim, sed tempor nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam dapibus erat sed metus accumsan fringilla.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section4">
+                            <h2><strong>Online Ordering</strong></h2>
+                            <p>Ut sed egestas eros. Pellentesque consequat tempor justo id fringilla. Phasellus efficitur massa eget lorem semper tincidunt. Sed dolor nunc, scelerisque in congue id, sollicitudin id urna. Sed vel consectetur diam. Phasellus magna eros, blandit eget neque quis, varius tincidunt est. Pellentesque accumsan, turpis nec volutpat consequat, risus odio rutrum odio, ut gravida lorem nisl in nisi. Vestibulum id tempor felis. Ut scelerisque vestibulum malesuada. Donec luctus cursus lorem id viverra.</p>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio bg-portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -247,7 +286,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; Easy Commerce 2017</p>
                 </div>
             </div>
         </div>

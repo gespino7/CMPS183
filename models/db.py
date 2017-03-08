@@ -6,7 +6,7 @@
 
 db = DAL ('sqlite://storage.sqlite',migrate = False)
 
-
+import datetime
 from gluon.tools import Auth
 auth = Auth(db)
 auth.define_tables()
@@ -64,6 +64,26 @@ db.define_table('cc',
                 Field('security_code'),
                 Field('exp_date'))
 
+##############
+db.define_table('comment',
+                Field('user_id', 'reference auth_user', default=auth.user_id),
+                Field('rate'),
+                Field('post_content', 'text'),
+                Field('created_on', 'datetime', default=datetime.datetime.utcnow())
+                )
+
+
+db.comment.user_id.readable = db.comment.user_id.writable = False
+
+db.comment.post_content.requires = IS_NOT_EMPTY()
+
+db.comment.rate.requires =  IS_MATCH('((\(\d{3}\) ?)|d{1})',
+                            error_message ='rate from 0-9.')
+
+db.comment.created_on.writable = False
+
+
+##############
 
 #User_ contact info.
 
@@ -107,12 +127,3 @@ db.user_.payment_info.requires = IS_NOT_EMPTY()
 
 auth.settings.extra_fields['auth_user_']= [Field('phone')]
 auth.define_tables(username=False,signature=False,migrate =False)
-
-
-
-
-
-
-
-
-

@@ -67,6 +67,22 @@ def card():
       # redirect(URL("index"))
     return dict(form=form)
 
+def create_post():
+    """form for posting a  new comment"""
+    form = SQLFORM(db.comment, 
+                 labels= { 'rate':'Rating','post_content': "Comment"},
+                 submit_button = 'Submit your comment',
+                  )
+
+    if form.process(keepvalues=True).accepted:
+       response.flash = 'comment accepted'
+       #redirect(URL('index'))
+    elif form.errors:
+       response.flash = 'please complete your post'
+    else:
+       response.flash = 'please post your comment'
+
+    return dict(form=form)
 
 
 
@@ -97,6 +113,3 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-
-
-

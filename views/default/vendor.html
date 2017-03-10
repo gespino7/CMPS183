@@ -20,6 +20,8 @@
     <!-- Custom Fonts -->
     <link href="{{=URL('static','font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -33,31 +35,31 @@
   <a href="#" class="w3-nav-item w3-button">Details</a>
   <a href="#" class="w3-nav-item w3-button">Reviews</a>
   <a href="#" class="w3-nav-item w3-button">Deals</a>
-    
+
 </div>
 <div class="w3-container">
     <div class="w3-row-padding">
         {{for listing in listings:}}
-         <div class="w3-third">
+         <div class="w3-third" id="item" >
               <div class="w3-card-24" style="width:100%">
                 <header class="w3-container w3-light-grey">
                   <h3>{{=listing.item_name}}</h3>
                 </header>
                 <div class="w3-container">
-                  <p>1 new friend request</p>
+
+                   <a class="w3-button w3-tiny w3-red w3-card-24 " href="{{=URL('default','edit',args=[listing.price])}}"  id="remove">-</a>
+                     <a  class="w3-button w3-tiny w3-blue w3-card-24"href="{{=URL('default','edit',args=[listing.price])}}" id="add">+</a>
                   <hr>
                   <img src="{{=URL('download', args=listing.image)}}"  class="w3-left w3-circle w3-margin-right" style="width:60px">
-                  <p>${{=listing.price}}</p><br>
-                    <p>{{=listing.description}}</p>
-                </div>
-                  <div class="w3-cell-row" >
-                      <div class="w3-container w3-cell w3-mobile">
-                          <button type="buttom" class="w3-button w3-block w3-blue" id="add">+</button>
-                      </div>
-                      <div class="w3-container w3-cell  w3-mobile">
-                          <button type="buttom" class="w3-button w3-block w3-red" id="remove">-</button>
-                      </div>
+
+                  <div class="w3-container" id="price">
+                      <p  type="number" id="value" >{{=listing.price}}</p><br>
                   </div>
+                       <div class="w3-container" id="description">
+                    <p>{{=listing.description}}</p>
+                  </div>
+
+                </div>
 
               </div>
         </div>
@@ -65,6 +67,33 @@
     </div>
 </div>
 </body>
+
+    <script type="text/javascript">
+
+  $(document).ready(function() {
+      console.log("ready()");
+
+    //Buttons
+    $('#remove').on( "click", (removeFromShoppingCart));
+    $('#add').on( "click", (addToShoppingCart));
+    var value = $('#value')
+
+    function removeFromShoppingCart () {
+        console.log(value[0]);
+
+    }
+   function addToShoppingCart () {
+        console.log(value);
+
+    }
+
+    console.log("done()");
+   });
+
+
+    </script>
+
+
 
 
 

@@ -33,6 +33,7 @@ db.define_table('user_',
 
 
 db.define_table('item',
+                Field('author', 'reference auth_user', default=auth.user_id),
                 Field('title'),
                 Field('description','text'),
                 Field('image','upload'),

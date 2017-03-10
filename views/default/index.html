@@ -39,6 +39,9 @@
             <li>
                 <a href="{{=URL('manager')}}" onclick=$("#menu-close").click();>My Dashboard</a>
             </li>
+            <li>
+                <a href="{{=URL('buyer')}}" onclick=$("#menu-close").click();>Shops</a>
+            </li>
              <li>
                  {{if auth.user_id:}}
                      <a href="{{=URL('default', 'user' ,args=['logout'])}}" onclick=$("#menu-close").click();>Sign out</a>

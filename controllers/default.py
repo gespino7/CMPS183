@@ -36,8 +36,8 @@ def customer_orders():
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
-    grid = SQLFORM.smartgrid(db.invoice)
-    return  dict(grid = grid)
+    listings = db().select(db.listing.ALL)
+    return  dict(listings = listings)
 
 
 @auth.requires_login()

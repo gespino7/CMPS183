@@ -23,26 +23,47 @@
 </head>
 
 <body>
+<header class="w3-container w3-light-grey">
+  <h1 class="w3-jumbo">Name of Shop</h1>
+  <p class="w3-xlarge">(408)421 0982</p>
+</header>
 
-    <div>
-        {{for vendor in vendors:}}
-         <div class="w3-container">
-              <div class="w3-card-4" style="width:20%">
+<div class="w3-bar w3-black w3-large">
+  <a href="#" class="w3-nav-item w3-button">Menu</a>
+  <a href="#" class="w3-nav-item w3-button">Details</a>
+  <a href="#" class="w3-nav-item w3-button">Reviews</a>
+  <a href="#" class="w3-nav-item w3-button">Deals</a>
+    
+</div>
+<div class="w3-container">
+    <div class="w3-row-padding">
+        {{for listing in listings:}}
+         <div class="w3-third">
+              <div class="w3-card-24" style="width:100%">
                 <header class="w3-container w3-light-grey">
-                  <h3>{{=vendor.business_name}}</h3>
+                  <h3>{{=listing.item_name}}</h3>
                 </header>
                 <div class="w3-container">
                   <p>1 new friend request</p>
                   <hr>
-                  <img src="" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-                  <p>{{=vendor.phone_num}}</p><br>
-                    <p>{{=vendor.address}}</p>
+                  <img src="{{=URL('download', args=listing.image)}}"  class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>${{=listing.price}}</p><br>
+                    <p>{{=listing.description}}</p>
                 </div>
-                <button type="buttom" class="w3-button w3-block w3-dark-grey" id="menu">Menu</button>
+                  <div class="w3-cell-row" >
+                      <div class="w3-container w3-cell w3-mobile">
+                          <button type="buttom" class="w3-button w3-block w3-blue" id="add">+</button>
+                      </div>
+                      <div class="w3-container w3-cell  w3-mobile">
+                          <button type="buttom" class="w3-button w3-block w3-red" id="remove">-</button>
+                      </div>
+                  </div>
+
               </div>
         </div>
         {{pass}}
     </div>
+</div>
 </body>
 
 

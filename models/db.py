@@ -4,7 +4,7 @@
 #DAL Constructor
 
 
-db = DAL ('sqlite://storage.sqlite',migrate = False)
+db = DAL ('sqlite://storage.sqlite')
 
 
 from gluon.tools import Auth
@@ -63,7 +63,24 @@ db.define_table('cc',
                 Field('card_number'),
                 Field('security_code'),
                 Field('exp_date'))
+import datetime
+db.define_table('listing',
+                Field('seller','reference auth_user', default=auth.user_id),
+                Field('date_added', 'datetime', default=datetime.datetime.utcnow(), requires=IS_DATE()),
+                Field('item_name',requires=IS_NOT_EMPTY()),
+                Field('description', requires=IS_NOT_EMPTY()),
+                Field('image', 'upload'),
+                Field('price', 'double'),
+                Field('status', 'boolean', default=False),
+                Field('category', requires=IS_NOT_EMPTY()),
+                format='%(subject)s')
 
+#Date format %m-%d-%Y %I:%M%P
+db.listing.price.requires = IS_NOT_EMPTY(), IS_FLOAT_IN_RANGE(0, 999999999.0, dot='.',error_message='The price should be in the range $0..999,999,999')
+db.listing.date_added.requires = IS_NOT_EMPTY()
+db.listing.date_added.writable = False
+db.listing.seller.writable = False
+db.listing._plural = " "
 
 #User_ contact info.
 

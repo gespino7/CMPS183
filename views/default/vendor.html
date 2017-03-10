@@ -24,37 +24,71 @@
 
 </head>
 
-<body>
-<header class="w3-container w3-light-grey">
-  <h1 class="w3-jumbo">Name of Shop</h1>
-  <p class="w3-xlarge">(408)421 0982</p>
-</header>
+    <script type="text/javascript">
 
-<div class="w3-bar w3-black w3-large">
-  <a href="#" class="w3-nav-item w3-button">Menu</a>
-  <a href="#" class="w3-nav-item w3-button">Details</a>
-  <a href="#" class="w3-nav-item w3-button">Reviews</a>
-  <a href="#" class="w3-nav-item w3-button">Deals</a>
+  $(document).ready(function() {
+      console.log("ready()");
+
+    //Buttons
+    $('#remove').on( "click",function () {
+        var v = $('#remove')[0].getAttribute("value");
+        console.log(v);
+    });
+    $('#add').on( "click",function () {
+        var v = $('#remove')[0].getAttribute("value");
+        console.log(v);
+    });
+   // var v = $('#remove')[0].getAttribute("value");
+//var v = $('#remove')
+  //  function removeFromShoppingCart () {
+
+//        console.log(v);
+
+    ///}
+  // function addToShoppingCart () {
+
+
+    //}
+
+    console.log("done()");
+   });
+
+
+    </script>
+<body>
+
+
+<div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+      <a href="#" class="w3-nav-item w3-button" >Home</a>
+
+  <a href="#menu" class="w3-nav-item w3-button" >Menu</a>
+  <a href="#details" class="w3-nav-item w3-button" >Details</a>
+  <a href="#reviews" class="w3-nav-item w3-button" >Reviews</a>
+  <a href="#deals" class="w3-nav-item w3-button" >Deals</a>
 
 </div>
-<div class="w3-container">
+<div class="w3-container w3-padding-64 w3-padding-64 w3-light-gray "  id="menu">
     <div class="w3-row-padding">
         {{for listing in listings:}}
-         <div class="w3-third" id="item" >
+         <div class="w3-third  w3-opacity w3-hover-opacity-off"  id="item" >
+               <img src="{{=URL('download', args=listing.image)}}"  class="w3-margin-right" style="width:100%">
               <div class="w3-card-24" style="width:100%">
-                <header class="w3-container w3-light-grey">
+                <header class="w3-container w3-">
+
+
+
                   <h3>{{=listing.item_name}}</h3>
                 </header>
                 <div class="w3-container">
 
-                   <a class="w3-button w3-tiny w3-red w3-card-24 " href="{{=URL('default','edit',args=[listing.price])}}"  id="remove">-</a>
-                     <a  class="w3-button w3-tiny w3-blue w3-card-24"href="{{=URL('default','edit',args=[listing.price])}}" id="add">+</a>
-                  <hr>
-                  <img src="{{=URL('download', args=listing.image)}}"  class="w3-left w3-circle w3-margin-right" style="width:60px">
-
-                  <div class="w3-container" id="price">
+                   <a type="number" class="w3-button w3-tiny w3-blue w3-card-24  " value="{{=listing.price}}"  id="remove">-</a>
+                     <a  type="number" class="w3-button w3-tiny w3-red w3-card-24" value="{{=listing.price}}" id="add">+</a>
+                     <div class="w3-container w3-right" id="price">
                       <p  type="number" id="value" >{{=listing.price}}</p><br>
                   </div>
+                  <hr>
+
+
                        <div class="w3-container" id="description">
                     <p>{{=listing.description}}</p>
                   </div>
@@ -63,39 +97,20 @@
 
               </div>
         </div>
+
+
+
         {{pass}}
     </div>
 </div>
 </body>
 
-    <script type="text/javascript">
 
-  $(document).ready(function() {
-      console.log("ready()");
-
-    //Buttons
-    $('#remove').on( "click", (removeFromShoppingCart));
-    $('#add').on( "click", (addToShoppingCart));
-    var value = $('#value')
-
-    function removeFromShoppingCart () {
-        console.log(value[0]);
-
-    }
-   function addToShoppingCart () {
-        console.log(value);
-
-    }
-
-    console.log("done()");
-   });
-
-
-    </script>
 
 
 
 
 
 </html>
+
 

@@ -30,9 +30,8 @@
       console.log("ready()");
 
     //Buttons
-    $('#remove').on( "click",function () {
-        var v = $('#remove')[0].getAttribute("value");
-        console.log(v);
+    $('button').on( "click",function () {
+        console.log( $('#remove').attr("value"));
     });
     $('#add').on( "click",function () {
         var v = $('#remove')[0].getAttribute("value");
@@ -57,17 +56,19 @@
     </script>
 <body>
 
-
-<div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+<div class="w3-container">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
       <a href="#" class="w3-nav-item w3-button" >Home</a>
 
   <a href="#menu" class="w3-nav-item w3-button" >Menu</a>
   <a href="#details" class="w3-nav-item w3-button" >Details</a>
   <a href="#reviews" class="w3-nav-item w3-button" >Reviews</a>
-  <a href="#deals" class="w3-nav-item w3-button" >Deals</a>
+    <a href="#reviews" class="w3-nav-item w3-button" >Deals</a>
+  <a href="#deals" class="w3-nav-item w3-button" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+
 
 </div>
-<div class="w3-container w3-padding-64 w3-padding-64 w3-light-gray "  id="menu">
+<div class="w3-container w3-padding-64 w3-padding-64 "  id="menu">
     <div class="w3-row-padding">
         {{for listing in listings:}}
          <div class="w3-third  w3-opacity w3-hover-opacity-off"  id="item" >
@@ -81,8 +82,8 @@
                 </header>
                 <div class="w3-container">
 
-                   <a type="number" class="w3-button w3-tiny w3-blue w3-card-24  " value="{{=listing.price}}"  id="remove">-</a>
-                     <a  type="number" class="w3-button w3-tiny w3-red w3-card-24" value="{{=listing.price}}" id="add">+</a>
+                   <button type="number" class="w3-button w3-tiny w3-blue w3-card-24  " value="{{=listing.price}}"   id="remove"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                     <button type="number" class="w3-button w3-tiny w3-red w3-card-24" value="{{=listing.price}}"  id="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
                      <div class="w3-container w3-right" id="price">
                       <p  type="number" id="value" >{{=listing.price}}</p><br>
                   </div>
@@ -103,6 +104,11 @@
         {{pass}}
     </div>
 </div>
+</div>
+<div class="w3-container w3-padding-64 w3-padding-64 " id="details">
+</div>
+</div>
+
 </body>
 
 

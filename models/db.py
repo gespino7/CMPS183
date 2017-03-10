@@ -9,7 +9,24 @@ db = DAL ('sqlite://storage.sqlite')
 
 from gluon.tools import Auth
 auth = Auth(db)
-auth.define_tables()
+categories = (["Buyer", "Vendor"])
+auth.settings.extra_fields['auth_user'] = [Field('User_Type', requires=IS_IN_SET(categories))]
+#auth.settings.register_onaccept = __add_user_membership
+#auth.add_group('Vendors', 'description1')
+#auth.add_group('Buyers', 'description2')
+
+def conditional_login(user_type):
+    if (user_type == "vendor"):
+        auth.settings.login_next = URL('vendor')
+    else:
+        auth.settings.login_next = URL('index')
+
+
+auth.settings.login_next = URL('choose_type')
+auth.settings.register_next = URL('input_info')
+
+
+
 #Table Constructor -> method to define new tables.
 #Vendor_ contact info.
 db.define_table('vendor_',
@@ -126,10 +143,22 @@ auth.settings.extra_fields['auth_user_']= [Field('phone')]
 auth.define_tables(username=False,signature=False,migrate =False)
 
 
+vendor_group_id = auth.add_group('Vendors')
+buyer_group_id = auth.add_group('Buyers')
+
+user_id = auth.user_id
+
+def add_member(group_ident, user_ident):
+    auth.add_membership(group_ident, user_ident)
+
+
+def add_membership(user_ident):
+    if (user_ident.User_Type == "Vendor"):
+        auth.add_membership(vendor_group_id, user_ident)
+    else:
+        auth.add_membership(buyer_group_id, user_ident)
 
 
 
-
-
-
+#auth.settings.register_onaccept = __add_user_membership
 

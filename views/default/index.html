@@ -37,14 +37,21 @@
                 <a href="#top" onclick=$("#menu-close").click();>Easy Commerce</a>
             </li>
             <li>
-                <a href="{{=URL('default','manager')}}" onclick=$("#menu-close").click();>My Dashboard</a>
+                <a href="{{=URL('manager')}}" onclick=$("#menu-close").click();>My Dashboard</a>
+            </li>
+            <li>
+                <a href="{{=URL('buyer')}}" onclick=$("#menu-close").click();>Shops</a>
             </li>
              <li>
                  {{if auth.user_id:}}
-                     <a href="{{=URL('default','user',args=['logout'])}}" onclick=$("#menu-close").click();>Sign out</a>
+                     <a href="{{=URL('default', 'user' ,args=['logout'])}}" onclick=$("#menu-close").click();>Sign out</a>
                  {{else:}}
-                    <a href="{{=URL('default','user',args=['login'])}}" onclick=$("#menu-close").click();>Sign in</a>
+                     <a href="{{=URL('default','user',args=['login'])}}" onclick=$("#menu-close").click();>Sign in</a>
+
                  {{pass}}
+                 {{#if (db.auth_user.User_Type == "vendor"):}}
+                     <!--<h1>It was a vendor</h2>-->
+                  {{#pass}}
 
             </li>
             <li>

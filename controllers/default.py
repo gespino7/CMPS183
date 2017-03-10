@@ -8,16 +8,12 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-g
-    if you need a simple wiki simply replace the two lines below with:
-    return augitth.wiki()
-
-    """
     # grid = SQLFORM.smartgrid(db.invoice)
     # return dict(grid = grid)
+    form = SQLFORM(db.auth_user)
+    if form.process().accepted:
+        response.flash = 'your login is accepted'
+
     return dict()
 
 @auth.requires_login()
@@ -33,17 +29,35 @@ def customer_orders():
 
 
 
+
 #Allow vendor to see page only when sing in.
-@auth.requires_login()
+#@auth.requires_login()
+
+
+
+
+def give_create_permission(form):
+    group_id = auth.id_group('Vendors')
+    auth.add_permission(group_id)
+
+auth.settings.register_onaccept = give_create_permission
+
+#@auth.requires_membership('Buyers')
+def buyer():
+    grid = SQLFORM.smartgrid(db.vendor_)
+    return dict(grid=grid)
+
+#@auth.requires_membership('Vendors')
 def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
     return  dict(grid = grid)
-
 
 @auth.requires_login()
 def manager():
     invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
     return dict(invoices=invoices)
+
+
 
 @auth.requires_login()
 def status_update():
@@ -56,6 +70,8 @@ def status_update():
         invoice.update_record(status = "pending")
     return invoice.status
 
+
+
 def card():
     fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
     form = SQLFORM(db.cc, fields=fields)
@@ -67,10 +83,46 @@ def card():
       # redirect(URL("index"))
     return dict(form=form)
 
+def choose_type():
+    return dict()
+
+def input_info():
+    return dict()
 
 
 
+def vendor_info():
+    form = SQLFORM(db.vendor_)
+    if form.accepts(request.vars, session):
+        response.flash = T('new record inserted')
+        #add_member(vendor_group_id, user_id)  # defined buyer_group_id and user_id at bottom of db.py
+        redirect(URL('vendor'))
+    #else:
+    #   response.flash = T('new record failed')
+    return dict(form=form)
 
+def buyer_info():
+    form = SQLFORM(db.user_)
+    if form.accepts(request.vars, session):
+        response.flash = T('new record inserted')
+        #auth.add_membership(buyer_group_id, user_id) # defined buyer_group_id and user_id at bottom of db.py
+        #auth.settings.register_onaccept = add_buyer(buyer_group_id, user_id)
+        #add_member(buyer_group_id, user_id)
+        redirect(URL('buyer'))
+        #add_buyer(buyer_group_id, user_id)
+    #else:
+    #    response.flash = T('new record failed')
+    return dict(form=form)
+
+"""def __add_user_membership(form):
+    #group = db(db.auth_group.role == form.vars.User_Type).select().first()
+    #group = vendor_group_id
+    #user_id = form.vars.id
+    #auth.add_membership(group, user_id)
+    group_id = form.vars.group_name
+    user_id = form.vars.id
+    auth.add_membership(group_id, user_id)
+"""
 def user():
     """
     exposes:
@@ -87,6 +139,10 @@ def user():
     to decorate functions that need access control
     also notice there is http://..../[app]/appadmin/manage_page.html/auth to allow administrator to manage_page.html users
     """
+
+    #auth.settings.register_onaccept = add_membership(user_id)
+    #auth.settings.register_onaccept = __add_user_membership
+    # already existing code
     return dict(form=auth())
 
 

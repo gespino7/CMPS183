@@ -11,39 +11,76 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".button_class1").click(function(){
+                var x  = "#td_id"+this.value;
+                $.get("status_update",
+                        {order_id:this.value},
+                        function(data,status){
+                    alert("Data:"+data +"\nStatus:"+status);
+                    $(x).text(data)
+                    console.log(x)
+		        });
+
+            });
+            $("#select_id1").change(function () {
+                var x = "/easycommerce/default/customer_orders?status="+this.value
+                $.get("status_update",
+                        {status:this.value},
+                        function(data,status){
+                    window.location.assign(x)
+		        });
+            });
+        });
+
+    </script>
 </head>
 <body>
    <div class="container">
-  <h2>Customer Orders</h2>
+  <h2>{{=db.auth_user[auth.user_id].first_name}}'s Customer Orders</h2>
   <p>Below are orders of past 1 month</p>
+       <select id="select_id1">
+            <option value="">Select order status:</option>
+            <option value="all">All</option>
+            <option value="pending">pending</option>
+            <option value="confirmed">confirmed</option>
+        </select>
   <table class="table">
     <thead>
       <tr>
-          <th>Ordername</th>
-          <th>Tracking number</th>
-          <th>price</th>
-          <th>Order date</th>
+           <th>Order #</th>
+           <th>Customer #</th>
+           <th>Item #</th>
+           <th>Amount</th>
+           <th>Order Time</th>
+          <th>Order Status</th>
+            <th>Confirm Order</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tbody_id1">
+    {{for invoice in invoices:}}
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-          <td>01/01/2017</td>
+         <td>{{=invoice.id}}</td>
+          <td>{{=invoice.customer_id}}</td>
+          <td>{{=invoice.item_id}}</td>
+          <td>{{=invoice.amount}}</td>
+          <td>{{=invoice.date}}</td>
+          <td id = "td_id{{=invoice.id}}">{{=invoice.status}}</td>
+        {{if invoice.status == "pending":}}
+          <td>
+              <button class = "button_class1" value = {{=invoice.id}}>Confirm</button>
+          </td>
+          {{else:}}
+          <td>
+              <button class = "button_class1" value = {{=invoice.id}}>Pend</button>
+          </td>
+        {{pass}}
+
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-          <td>01/01/2017</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-          <td>01/01/2017</td>
-      </tr>
+    {{pass}}
+
     </tbody>
   </table>
 </div>

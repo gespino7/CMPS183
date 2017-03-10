@@ -1,81 +1,239 @@
-timestamp: 2017-01-12T21:50:57.611005
-CREATE TABLE auth_user(
+timestamp: 2017-02-10T11:07:54.793000
+CREATE TABLE vendor(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    first_name CHAR(128),
-    last_name CHAR(128),
-    email CHAR(512),
-    password CHAR(512),
-    registration_key CHAR(512),
-    reset_password_key CHAR(512),
-    registration_id CHAR(512)
-);
-success!
-timestamp: 2017-01-12T21:50:57.613557
-CREATE TABLE auth_group(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    role CHAR(512),
-    description TEXT
-);
-success!
-timestamp: 2017-01-12T21:50:57.616716
-CREATE TABLE auth_membership(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
-    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
-);
-success!
-timestamp: 2017-01-12T21:50:57.619396
-CREATE TABLE auth_permission(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
     name CHAR(512),
-    table_name CHAR(512),
-    record_id INTEGER
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
 );
-success!
-timestamp: 2017-01-12T21:50:57.623985
-CREATE TABLE auth_event(
+timestamp: 2017-02-10T11:08:29.897000
+CREATE TABLE vendor(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    time_stamp TIMESTAMP,
-    client_ip CHAR(512),
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
-    origin CHAR(512),
-    description TEXT
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
 );
-success!
-timestamp: 2017-01-12T21:50:57.626577
-CREATE TABLE auth_cas(
+timestamp: 2017-02-10T11:09:44.595000
+CREATE TABLE vendor(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
-    created_on TIMESTAMP,
-    service CHAR(512),
-    ticket CHAR(512),
-    renew CHAR(1)
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
 );
-success!
-timestamp: 2017-02-27T10:30:01.703000
-CREATE TABLE listing(
+timestamp: 2017-02-10T11:12:15.195000
+CREATE TABLE vendor(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    seller INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
-    date_added TIMESTAMP,
-    item_name CHAR(512),
-    description CHAR(512),
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-02-24T09:57:11.529000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-03-03T10:21:57.148000
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    item_id CHAR(512),
+    status CHAR(512)
+);
+timestamp: 2017-03-03T10:22:19.095000
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    description TEXT,
     image CHAR(512),
     price DOUBLE,
-    status CHAR(1),
-    category CHAR(512)
+    amount INTEGER
 );
 success!
-timestamp: 2017-03-03T09:42:22.734000
-CREATE TABLE vendor_info(
+timestamp: 2017-03-03T10:26:26.575000
+CREATE TABLE vendor(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    vendor_name CHAR(512),
+    name CHAR(512),
     email CHAR(512),
-    phone_number CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
     address CHAR(512),
-    city CHAR(512),
-    state CHAR(512),
-    zipcode CHAR(512),
-    country CHAR(512)
+    date TIMESTAMP
+);
+timestamp: 2017-03-03T10:31:56.069000
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    item_id CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
 );
 success!
+timestamp: 2017-03-06T10:27:54.084300
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:02.304652
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:10.093226
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:28:43.053858
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:31:03.034881
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:31:42.910223
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:33:55.841083
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:34:03.661420
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:34:55.787530
+ALTER TABLE invoice ADD seller_id INTEGER;
+timestamp: 2017-03-06T10:36:54.255914
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:38:06.155992
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:38:13.998740
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:39:28.226228
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-03-06T10:39:48.942928
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:41:44.188672
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:41:53.401254
+CREATE TABLE invoie(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T10:42:31.595406
+CREATE TABLE invoices(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T10:50:50.048757
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:51:32.301430
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:54:53.824795
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:57:45.650478
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:58:30.031861
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:58:36.761658
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:59:31.853650
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T10:59:42.543537
+ALTER TABLE invoice ADD seller_id CHAR(512);
+timestamp: 2017-03-06T11:00:56.114324
+CREATE TABLE invoice3(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-06T11:01:54.871050
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id CHAR(512),
+    customer_id CHAR(512),
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-02-24T09:31:44.306000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-02-24T09:33:27.701000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-02-24T09:33:52.860000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-02-24T09:37:04.684000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+timestamp: 2017-02-24T09:37:08.430000
+CREATE TABLE vendor(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);

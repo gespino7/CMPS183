@@ -7,6 +7,7 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
+<<<<<<< HEAD
 import os
 
 def serve_file():
@@ -14,14 +15,18 @@ def serve_file():
     path = os.path.join(request.folder, 'private', 'file_subfolder', filename)
     return response.stream(path)
 
+=======
+>>>>>>> 616f496c885a067b39c9d58cf56aa94ac018971c
 def index():
     """
     example action using the internationalization operator T and flash
     rendered by views/default/index.html or views/generic.html
-
+g
     if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
+    return augitth.wiki()
+
     """
+<<<<<<< HEAD
     categories = get_categories()
     listings = get_listings()
     num_listings = len(listings)
@@ -29,6 +34,61 @@ def index():
 
 def get_listings():
     return db(db.listing).select().sort(lambda p: p.date_added, reverse=True)
+=======
+    # grid = SQLFORM.smartgrid(db.invoice)
+    # return dict(grid = grid)
+    return dict()
+
+@auth.requires_login()
+def customer_orders():
+    if request.vars['status'] and request.vars['status']!="all":
+        invoices = db((db.invoice.seller_id == auth.user_id) & (db.invoice.status == request.vars['status'])).select(
+            orderby=db.invoice.date)
+        print ("hello" + request.vars['status'])
+    else:
+        invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+        print ("no status")
+    return dict(invoices=invoices)
+
+
+
+#Allow vendor to see page only when sing in.
+@auth.requires_login()
+def vendor():
+    grid = SQLFORM.smartgrid(db.invoice)
+    return  dict(grid = grid)
+
+
+@auth.requires_login()
+def manager():
+    invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+    return dict(invoices=invoices)
+
+@auth.requires_login()
+def status_update():
+    if request.vars['status']:
+        return
+    invoice = db.invoice[request.vars['order_id']]
+    if invoice.status == 'pending':
+        invoice.update_record(status = "confirmed")
+    else:
+        invoice.update_record(status = "pending")
+    return invoice.status
+
+def card():
+    fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
+    form = SQLFORM(db.cc, fields=fields)
+    if form.process().accepted:
+        response.flash = 'Your credit card is confirmed'
+
+    else:
+        response.flash = 'please fill out your credit card information'
+      # redirect(URL("index"))
+    return dict(form=form)
+
+
+
+>>>>>>> 616f496c885a067b39c9d58cf56aa94ac018971c
 
 def get_categories():
     return db(db.listing).select().sort(lambda p: p.category, reverse=True)
@@ -77,7 +137,7 @@ def user():
         @auth.requires_membership('group name')
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
-    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    also notice there is http://..../[app]/appadmin/manage_page.html/auth to allow administrator to manage_page.html users
     """
     return dict(form=auth())
 
@@ -91,11 +151,4 @@ def download():
     return response.download(request, db)
 
 
-def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
-    return service()
+

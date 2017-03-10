@@ -1,69 +1,378 @@
-{{extend 'layout.html'}}
-<link href="{{=URL('static', 'css/new.css')}}" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Rubik|Open+Sans" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-<!--Banner for store, figure out how to adjust this-->
-{{block header}}
-    <header class="container-fluid background">
-      <div class="jumbotron text-center">
-        {{if response.title:}}
-        <h1>{{=response.title}}
-          <small>{{=response.subtitle or ''}}</small></h1>
-        {{pass}}
-      </div>
-    </header>
-{{end}}
+<head>
 
-<!--Creates a container for a single category. Each subsequent div represents
-    another row of clickable images in the vendor's store. Needs database
-    for image/price/name retrieval. Also adjust height. -->
-<!-- Need to add javascript for image size adjustment -->
-<html>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-{{current = 0}}
-{{i = 0}}
-{{for type in categories:}}
-    {{if type.category != current:}}
-        <div id="section">
-            {{current = type.category}}
-            <h2 class="left_align"><u>{{=type.category}}</u></h2>
-            {{for listing in listings:}}
-                {{if current == listing.category:}}
-                    {{if i%3==0 or i==0:}}
-                        <div id="img_row" class="container">
-                    {{pass}}
+    <title>Easy Commerce</title>
 
-                    <div id="img_block">
-                        <a href="{{=URL('EasyCommerce','default','item',args=[listing.id])}}">
-                            <img class="center" src="{{=URL('download', args=listing.image)}}" />
-                        <p class="left vertical">
-                            {{=listing.item_name}}
-                        </p>
-                        <p class="right vertical">
-                            ${{=listing.price}}
-                        </p>
-                        </a>
-                    </div>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{=URL('static','css/bootstrap.min.css')}}" rel="stylesheet">
 
-                    {{i = i+1}}
-                    <!-- Close row div if at end of row-->
-                    {{if i%3==0:}}
-                        </div>
-                    {{pass}}
-                {{pass}}
-            {{pass}}
+    <!-- Custom CSS -->
+    <link href="{{=URL('static','css/stylish-portfolio.css')}}" rel="stylesheet">
+    <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet">
+    <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet">
 
-            <!-- Close row div if at end of category but not end of row-->
-            {{if i%3!=0:}}
-                </div>
-            {{pass}}
-            {{i = 0}}
+    <!-- Custom Fonts -->
+    <link href="{{=URL('static','font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top" onclick=$("#menu-close").click();>Easy Commerce</a>
+            </li>
+            <li>
+                <a href="{{=URL('default','manager')}}" onclick=$("#menu-close").click();>My Dashboard</a>
+            </li>
+             <li>
+                 {{if auth.user_id:}}
+                     <a href="{{=URL('default','user',args=['logout'])}}" onclick=$("#menu-close").click();>Sign out</a>
+                 {{else:}}
+                    <a href="{{=URL('default','user',args=['login'])}}" onclick=$("#menu-close").click();>Sign in</a>
+                 {{pass}}
+
+            </li>
+            <li>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a href="#services" onclick=$("#menu-close").click();>Services</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header" >
+        <div class="text-vertical-center">
+            <h1>Easy Commerce</h1>
+            <h3>Online Commerce Made Easy</h3>
+            <br>
+            <a href="#services" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
-    {{pass}}
-{{pass}}
-</br></br>
-{{=A('Add item',_class='btn btn-info',_href=URL('EasyCommerce','default','add'))}}
-</br>
-</html>
+    </header>
 
-<!-- Web2py footer? -->
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-bottom">
+            <h1>Take Your Business Online </h1>
+        </div>
+    </aside>
+
+
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Our Services</h2>
+                    <hr class="small">
+                    <div class="row"><!-- virtual shopping cat, electronic payments (options), location/navigation services, analytics for vendors (items sold, hot times, best times)-->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-bar-chart fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Vendor Analytics</strong>
+                                </h4>
+                                <p>We help your business grow by tracking your sales and returning analysis charts.</p>
+                                <a href="#section1" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-map-marker fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Navigation Services</strong>
+                                </h4>
+                                <p>Make your business more accessible to local customers by sharing your location.</p>
+                                <a href="#section2" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-usd fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Online Payments</strong>
+                                </h4>
+                                <p>Allow for more versatility by offering various payment options.</p>
+                                <a href="#section3" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-shopping-cart fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Online Ordering</strong>
+                                </h4>
+                                <p>Keep track of customer orders on an easy to use interface.</p>
+                                <a href="#section4" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!--Section Details-->
+    <section id="details" class="details">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <div id="section1">
+                            <h2><strong>Vendor Analytics</strong></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a dui facilisis, malesuada sapien et, sagittis felis. Nam dictum ipsum et ligula convallis luctus. Nulla elementum vitae urna ut molestie. Cras eget nulla luctus, rhoncus eros sed, aliquam nisi. Nullam sagittis condimentum pretium. Aliquam erat volutpat. Aenean vitae lobortis sapien. Praesent condimentum ex sed lobortis vulputate. Proin mi enim, blandit ac erat at, hendrerit tempor mauris. Nam volutpat vitae augue id pellentesque.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section2">
+                            <h2><strong>Navigation Services</strong></h2>
+                            <p>Nunc interdum nibh velit, at tristique nisi bibendum in. Morbi aliquet, orci et dapibus eleifend, tellus metus volutpat neque, id auctor quam turpis eget odio. Nunc aliquet et leo non tristique. Vestibulum ac accumsan eros. Ut ut augue et erat consequat vestibulum. Suspendisse eget lacus in mi elementum accumsan. Aenean aliquam velit sit amet convallis tempus. In id felis nec nulla maximus sodales. Integer consectetur elementum convallis. Cras at tellus lobortis, posuere dui ut, condimentum diam.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section3">
+                            <h2><strong>Online Payments</strong></h2>
+                            <p>Morbi sit amet aliquam enim, eget euismod lectus. Nam mollis tincidunt libero ut aliquam. Suspendisse sed volutpat lacus. Cras aliquet vel risus sed finibus. Suspendisse porta dictum elit. Suspendisse urna dui, feugiat eget tortor ac, tincidunt accumsan tortor. Suspendisse suscipit tellus id nunc fermentum gravida. Sed vel nulla sit amet erat luctus semper in ac elit. Nullam sapien justo, iaculis ac erat quis, bibendum fermentum felis. Nulla quis turpis hendrerit, mattis tortor vel, condimentum nisi. Aenean vitae suscipit enim, sed tempor nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam dapibus erat sed metus accumsan fringilla.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="section4">
+                            <h2><strong>Online Ordering</strong></h2>
+                            <p>Ut sed egestas eros. Pellentesque consequat tempor justo id fringilla. Phasellus efficitur massa eget lorem semper tincidunt. Sed dolor nunc, scelerisque in congue id, sollicitudin id urna. Sed vel consectetur diam. Phasellus magna eros, blandit eget neque quis, varius tincidunt est. Pellentesque accumsan, turpis nec volutpat consequat, risus odio rutrum odio, ut gravida lorem nisl in nisi. Vestibulum id tempor felis. Ut scelerisque vestibulum malesuada. Donec luctus cursus lorem id viverra.</p>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio bg-portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Our Work</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="{{=URL('static','img/portfolio-1.jpg')}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="{{=URL('static','img/portfolio-2.jpg')}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="{{=URL('static','img/portfolio-3.jpg')}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="{{=URL('static','img/portfolio-4.jpg')}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#" class="btn btn-dark">View More Items</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>The buttons below are impossible to resist.</h3>
+                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
+                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8600.910670072057!2d-122.06200181060217!3d36.99102286152179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e41a2ff8cbf4f%3A0x3a8e3b7c928320d5!2sUniversity+of+California+Santa+Cruz!5e0!3m2!1sen!2sus!4v1487545920979"></iframe>
+        <br />
+        <small>
+            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A'"></a>
+        </small>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Easy Commerce</strong>
+                    </h4>
+                    <p>1156 High St
+                        <br>Santa Cruz, CA 95064</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:contact@easycommerce.com">contact@easycommerce.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Easy Commerce 2017</p>
+                </div>
+            </div>
+        </div>
+        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{{=URL('static','js/jquery.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
+
+</body>
+
+</html>

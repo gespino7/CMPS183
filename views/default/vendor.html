@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Easy Commerce</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{=URL('static','css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+  <link href="{{=URL('static','css/w3.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <!-- Custom Fonts -->
+    <link href="{{=URL('static','font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div>
+        {{for vendor in vendors:}}
+         <div class="w3-container">
+              <div class="w3-card-4" style="width:20%">
+                <header class="w3-container w3-light-grey">
+                  <h3>{{=vendor.business_name}}</h3>
+                </header>
+                <div class="w3-container">
+                  <p>1 new friend request</p>
+                  <hr>
+                  <img src="" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <p>{{=vendor.phone_num}}</p><br>
+                    <p>{{=vendor.address}}</p>
+                </div>
+                <button type="buttom" class="w3-button w3-block w3-dark-grey" id="menu">Menu</button>
+              </div>
+        </div>
+        {{pass}}
+    </div>
+</body>
+
+
+
+</html>
+

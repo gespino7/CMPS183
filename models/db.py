@@ -4,27 +4,15 @@
 #DAL Constructor
 
 
-db = DAL ('sqlite://storage.sqlite')
+db = DAL ('sqlite://storage.sqlite', fake_migrate= False)
 
 
 from gluon.tools import Auth
 auth = Auth(db)
+auth.define_tables()
 categories = (["Buyer", "Vendor"])
 auth.settings.extra_fields['auth_user'] = [Field('User_Type', requires=IS_IN_SET(categories))]
 #auth.settings.register_onaccept = __add_user_membership
-#auth.add_group('Vendors', 'description1')
-#auth.add_group('Buyers', 'description2')
-
-def conditional_login(user_type):
-    if (user_type == "vendor"):
-        auth.settings.login_next = URL('vendor')
-    else:
-        auth.settings.login_next = URL('index')
-
-
-auth.settings.login_next = URL('choose_type')
-auth.settings.register_next = URL('input_info')
-
 
 
 #Table Constructor -> method to define new tables.

@@ -247,3 +247,12 @@ CREATE TABLE cc(
     exp_date CHAR(512)
 );
 success!
+timestamp: 2017-03-10T10:47:06.849948
+CREATE TABLE comment(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    rate CHAR(512),
+    post_content TEXT,
+    created_on TIMESTAMP
+);
+success!

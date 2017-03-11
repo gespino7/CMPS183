@@ -2,7 +2,7 @@
 
 
 #DAL Constructor
-#
+
 # db = DAL ('sqlite://storage.sqlite')
 #
 # from gluon.tools import Auth
@@ -10,9 +10,9 @@
 # auth.define_tables()
 #
 #
-# db.define_table('cc',
-#                 Field('first_name'),
-#                 Field('last_name'),
-#                 Field('card_number'),
-#                 Field('security_code'),
-#                 Field('exp_date'))
+# # db.define_table('comment',
+# #                 Field('user_id', 'reference auth_user', default=auth.user_id),
+# #                 Field('rate'),
+# #                 Field('post_content', 'text'),
+# #                 Field('created_on', 'datetime', default=datetime.datetime.utcnow())
+# #                 )

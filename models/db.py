@@ -76,8 +76,7 @@ db.comment.user_id.readable = db.comment.user_id.writable = False
 
 db.comment.post_content.requires = IS_NOT_EMPTY()
 
-db.comment.rate.requires =  IS_MATCH('((\(\d{3}\) ?)|d{1})',
-                            error_message ='rate from 0-9.')
+db.comment.rate.requires =  IS_IN_SET([0,1,2,3,4,5])
 
 db.comment.created_on.writable = False
 

@@ -77,7 +77,7 @@ def create_post():
 
     if form.process(keepvalues=True).accepted:
        response.flash = 'comment accepted'
-       #redirect(URL('index'))
+       redirect(URL('comment_page'))
     elif form.errors:
        response.flash = 'please complete your post'
     else:
@@ -85,8 +85,15 @@ def create_post():
 
     return dict(form=form)
 
+def comment_page():
+    comments = getcomment()
+    # number of posts:
+    comment_count = len(comments)
 
+    return dict(comment_count=comment_count, comments=comments)
 
+def getcomment():
+    return db(db.comment).select()#.sort(lambda p: p.updated_on, reverse=True)
 
 def user():
     """

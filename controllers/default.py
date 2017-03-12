@@ -63,7 +63,7 @@ def my_posts():
             response.flash = 'please complete your post'
         else:
             response.flash = 'please finish your comment'
-    return dict(form=form,items=items , invoices =invoices)
+    return dict(form=form,items=items,invoices =invoices)
 
 #Allow vendor to see page only when sing in.
 @auth.requires_login()

@@ -1,0 +1,768 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'NoneType' object has no attribute 'first_name'"
+p3
+sS'layer'
+p4
+S'C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\views\\default/manager.html'
+p5
+sS'code'
+p6
+S'response.write(\'<!DOCTYPE html>\\r\\n<html lang="en">\\r\\n\\r\\n<head>\\r\\n\\r\\n    <meta charset="utf-8">\\r\\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\\r\\n    <meta name="viewport" content="width=device-width, initial-scale=1">\\r\\n    <meta name="description" content="">\\r\\n    <meta name="author" content="">\\r\\n\\r\\n    <title>\\r\\n        \', escape=False)\nresponse.write(db.auth_user[auth.user_id].first_name)\nresponse.write(\'\\r\\n        \', escape=False)\nresponse.write(db.auth_user[auth.user_id].last_name)\nresponse.write(\'\\r\\n    </title>\\r\\n\\r\\n    <!-- Bootstrap Core CSS -->\\r\\n    <link href=\', escape=False)\nresponse.write(URL(\'static\',\'css/bootstrap.min.css\'))\nresponse.write(\' rel="stylesheet">\\r\\n\\r\\n    <!-- Custom CSS -->\\r\\n    <link href=\', escape=False)\nresponse.write(URL(\'static\',\'css/sb-admin.css\'))\nresponse.write(\' rel="stylesheet">\\r\\n\\r\\n    <!-- Morris Charts CSS -->\\r\\n    <link href=\', escape=False)\nresponse.write(URL(\'static\',\'css/plugins/morris.css\'))\nresponse.write(\'rel="stylesheet">\\r\\n\\r\\n    <!-- Custom Fonts -->\\r\\n    <link href=\', escape=False)\nresponse.write(URL(\'static\',\'font-awesome/css/font-awesome.min.css\'))\nresponse.write(\' rel="stylesheet" type="text/css">\\r\\n\\r\\n    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\\r\\n    <!-- WARNING: Respond.js doesn\\\'t work if you view the page via file:// -->\\r\\n    <!--[if lt IE 9]>\\r\\n        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>\\r\\n        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>\\r\\n    <![endif]-->\\r\\n\\r\\n</head>\\r\\n\\r\\n<body>\\r\\n\\r\\n    <div id="wrapper">\\r\\n\\r\\n        <!-- Navigation -->\\r\\n        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">\\r\\n            <!-- Brand and toggle get grouped for better mobile display -->\\r\\n            <div class="navbar-header">\\r\\n                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">\\r\\n                    <span class="sr-only">Toggle navigation</span>\\r\\n                    <span class="icon-bar"></span>\\r\\n                    <span class="icon-bar"></span>\\r\\n                    <span class="icon-bar"></span>\\r\\n                </button>\\r\\n                <a class="navbar-brand" href="index.html">Easy Commerce</a>\\r\\n            </div>\\r\\n            <!-- Top Menu Items -->\\r\\n            <ul class="nav navbar-right top-nav">\\r\\n                <li class="dropdown">\\r\\n                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>\\r\\n                    <ul class="dropdown-menu message-dropdown">\\r\\n                        <li class="message-preview">\\r\\n                            <a href="#">\\r\\n                                <div class="media">\\r\\n                                    <span class="pull-left">\\r\\n                                        <img class="media-object" src="http://placehold.it/50x50" alt="">\\r\\n                                    </span>\\r\\n                                    <div class="media-body">\\r\\n                                        <h5 class="media-heading"><strong>user_name</strong>\\r\\n                                        </h5>\\r\\n                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>\\r\\n                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </li>\\r\\n                        <li class="message-preview">\\r\\n                            <a href="#">\\r\\n                                <div class="media">\\r\\n                                    <span class="pull-left">\\r\\n                                        <img class="media-object" src="http://placehold.it/50x50" alt="">\\r\\n                                    </span>\\r\\n                                    <div class="media-body">\\r\\n                                        <h5 class="media-heading"><strong>\', escape=False)\nresponse.write(db.auth_user[auth.user_id].first_name)\nresponse.write(\'</strong>\\r\\n                                        </h5>\\r\\n                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>\\r\\n                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </li>\\r\\n                        <li class="message-footer">\\r\\n                            <a href="#">Read All New Messages</a>\\r\\n                        </li>\\r\\n                    </ul>\\r\\n                </li>\\r\\n                <li class="dropdown">\\r\\n                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>\\r\\n                    <ul class="dropdown-menu alert-dropdown">\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>\\r\\n                        </li>\\r\\n                        <li class="divider"></li>\\r\\n                        <li>\\r\\n                            <a href="#">View All</a>\\r\\n                        </li>\\r\\n                    </ul>\\r\\n                </li>\\r\\n                <li class="dropdown">\\r\\n                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>\\r\\n                    \', escape=False)\nresponse.write(db.auth_user[auth.user_id].first_name)\nresponse.write(\'\\r\\n                    \', escape=False)\nresponse.write(db.auth_user[auth.user_id].last_name)\nresponse.write(\'\\r\\n                        <b class="caret"></b></a>\\r\\n                    <ul class="dropdown-menu">\\r\\n                        <li>\\r\\n                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>\\r\\n                        </li>\\r\\n                        <li>\\r\\n                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>\\r\\n                        </li>\\r\\n                        <li class="divider"></li>\\r\\n                        <li>\\r\\n                            <a href="\', escape=False)\nresponse.write(URL(\'default\',\'user\',args=[\'logout\']))\nresponse.write(\'"><i class="fa fa-fw fa-power-off"></i> Log Out</a>\\r\\n                        </li>\\r\\n                    </ul>\\r\\n                </li>\\r\\n            </ul>\\r\\n            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->\\r\\n            <div class="collapse navbar-collapse navbar-ex1-collapse">\\r\\n                <ul class="nav navbar-nav side-nav">\\r\\n                    <li class="active">\\r\\n                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>\\r\\n                    </li>\\r\\n\\r\\n\\r\\n                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Add Items.<i class="fa fa-fw fa-caret-down"></i></a>\\r\\n                        <ul id="demo" class="collapse">\\r\\n                            <li>\\r\\n                                <a href="#">New Item</a>\\r\\n                            </li>\\r\\n                            <li>\\r\\n                                <a href="#">Remove Item</a>\\r\\n                            </li>\\r\\n                        </ul>\\r\\n                    </li>\\r\\n                    <li>\\r\\n                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>\\r\\n                    </li>\\r\\n                    <li>\\r\\n                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>\\r\\n                    </li>\\r\\n                </ul>\\r\\n            </div>\\r\\n            <!-- /.navbar-collapse -->\\r\\n        </nav>\\r\\n\\r\\n        <div id="page-wrapper">\\r\\n\\r\\n            <div class="container-fluid">\\r\\n\\r\\n                <!-- Page Heading -->\\r\\n                <div class="row">\\r\\n                    <div class="col-lg-12">\\r\\n                        <h1 class="page-header">\\r\\n                            Dashboard <small>Statistics Overview</small>\\r\\n                        </h1>\\r\\n                        <ol class="breadcrumb">\\r\\n                            <li class="active">\\r\\n                                <i class="fa fa-dashboard"></i> Dashboard\\r\\n                            </li>\\r\\n                        </ol>\\r\\n                    </div>\\r\\n                </div>\\r\\n\\r\\n\\r\\n                <div class="row">\\r\\n                    <div class="col-lg-3 col-md-6">\\r\\n                        <div class="panel panel-primary">\\r\\n                            <div class="panel-heading">\\r\\n                                <div class="row">\\r\\n                                    <div class="col-xs-3">\\r\\n                                        <i class="fa fa-comments fa-5x"></i>\\r\\n                                    </div>\\r\\n                                    <div class="col-xs-9 text-right">\\r\\n                                        <div class="huge">\', escape=False)\nresponse.write(len(invoices))\nresponse.write(\'</div>\\r\\n                                        <div>New Comments!</div>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                            <a href="#">\\r\\n                                <div class="panel-footer">\\r\\n                                    <span class="pull-left">View Details</span>\\r\\n                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>\\r\\n                                    <div class="clearfix"></div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </div>\\r\\n                    </div>\\r\\n                    <div class="col-lg-3 col-md-6">\\r\\n                        <div class="panel panel-yellow">\\r\\n                            <div class="panel-heading">\\r\\n                                <div class="row">\\r\\n                                    <div class="col-xs-3">\\r\\n                                        <i class="fa fa-shopping-cart fa-5x"></i>\\r\\n                                    </div>\\r\\n                                    <div class="col-xs-9 text-right">\\r\\n                                        <div class="huge">\', escape=False)\nresponse.write(len(invoices))\nresponse.write(\'</div>\\r\\n                                        <div>New Orders!</div>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                            <a href="\', escape=False)\nresponse.write(URL(\'default\',\'customer_orders\'))\nresponse.write(\'">\\r\\n                                <div class="panel-footer">\\r\\n                                    <span class="pull-left">View Details</span>\\r\\n                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>\\r\\n                                    <div class="clearfix"></div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </div>\\r\\n                    </div>\\r\\n                    <div class="col-lg-3 col-md-6">\\r\\n                        <div class="panel panel-green">\\r\\n                            <div class="panel-heading">\\r\\n                                <div class="row">\\r\\n                                    <div class="col-xs-3">\\r\\n                                        <i class="fa fa-tasks fa-5x"></i>\\r\\n                                    </div>\\r\\n                                    <div class="col-xs-9 text-right">\\r\\n                                        <div class="huge">\', escape=False)\nresponse.write(len(db(db.invoice.status == "confirmed").select()))\nresponse.write(\'</div>\\r\\n                                        <div>Confirmed Orders!</div>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                            <a href="\', escape=False)\nresponse.write(URL(\'default\',\'customer_orders\'))\nresponse.write(\'">\\r\\n                                <div class="panel-footer">\\r\\n                                    <span class="pull-left">View Details</span>\\r\\n                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>\\r\\n                                    <div class="clearfix"></div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </div>\\r\\n                    </div>\\r\\n\\r\\n                    <div class="col-lg-3 col-md-6">\\r\\n                        <div class="panel panel-red">\\r\\n                            <div class="panel-heading">\\r\\n                                <div class="row">\\r\\n                                    <div class="col-xs-3">\\r\\n                                        <i class="fa fa-bell fa-5x"></i>\\r\\n                                    </div>\\r\\n                                    <div class="col-xs-9 text-right">\\r\\n                                        <div class="huge">\', escape=False)\nresponse.write(len(db(db.invoice.status == "pending").select()))\nresponse.write(\'</div>\\r\\n                                        <div>Pending Orders!</div>\\r\\n                                    </div>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                            <a href="\', escape=False)\nresponse.write(URL(\'default\',\'customer_orders\'))\nresponse.write(\'">\\r\\n                                <div class="panel-footer">\\r\\n                                    <span class="pull-left">View Details</span>\\r\\n                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>\\r\\n                                    <div class="clearfix"></div>\\r\\n                                </div>\\r\\n                            </a>\\r\\n                        </div>\\r\\n                    </div>\\r\\n                </div>\\r\\n                <!-- /.row -->\\r\\n\\r\\n                <div class="row">\\r\\n                    <div class="col-lg-12">\\r\\n                        <div class="panel panel-default">\\r\\n                            <div class="panel-heading">\\r\\n                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Items Sold</h3>\\r\\n                            </div>\\r\\n                            <div class="panel-body">\\r\\n                                <div id="morris-area-chart"></div>\\r\\n                            </div>\\r\\n                        </div>\\r\\n                    </div>\\r\\n                </div>\\r\\n                <!-- /.row -->\\r\\n\\r\\n                <div class="row">\\r\\n                    <div class="col-lg-5">\\r\\n                        <div class="panel panel-default">\\r\\n                            <div class="panel-heading">\\r\\n                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart</h3>\\r\\n                            </div>\\r\\n                            <div class="panel-body">\\r\\n                                <div id="morris-donut-chart"></div>\\r\\n                                <div class="text-rigitght">\\r\\n                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                        </div>\\r\\n                    </div>\\r\\n\\r\\n                    <div class="col-lg-7">\\r\\n                        <div class="panel panel-default">\\r\\n                            <div class="panel-heading">\\r\\n                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>\\r\\n                            </div>\\r\\n                            <div class="panel-body">\\r\\n                                <div class="table-responsive">\\r\\n                                    <table class="table table-bordered table-hover table-striped">\\r\\n                                        <thead>\\r\\n                                            <tr>\\r\\n                                                <th>Order #</th>\\r\\n                                                <th>Customer #</th>\\r\\n                                                <th>Item #</th>\\r\\n                                                <th>Amount</th>\\r\\n                                                <th>Order Time</th>\\r\\n                                                <th>Order Status</th>\\r\\n                                            </tr>\\r\\n                                        </thead>\\r\\n                                        <tbody>\\r\\n                                            \', escape=False)\nfor invoice in invoices:\n    response.write(\'\\r\\n                                            <tr>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.id)\n    response.write(\'</td>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.customer_id)\n    response.write(\'</td>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.item_id)\n    response.write(\'</td>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.amount)\n    response.write(\'</td>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.date)\n    response.write(\'</td>\\r\\n                                                <td>\', escape=False)\n    response.write(invoice.status)\n    response.write(\'</td>\\r\\n\\r\\n                                            </tr>\\r\\n                                            \', escape=False)\n    pass\nresponse.write(\'\\r\\n                                        </tbody>\\r\\n                                    </table>\\r\\n                                </div>\\r\\n                                <div class="text-right">\\r\\n                                    <a href="\', escape=False)\nresponse.write(URL(\'default\',\'customer_orders\'))\nresponse.write(\'">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>\\r\\n                                </div>\\r\\n                            </div>\\r\\n                        </div>\\r\\n                    </div>\\r\\n                </div>\\r\\n                <!-- /.row -->\\r\\n\\r\\n            </div>\\r\\n            <!-- /.container-fluid -->\\r\\n\\r\\n        </div>\\r\\n        <!-- /#page-wrapper -->\\r\\n\\r\\n    </div>\\r\\n    <!-- /#wrapper -->\\r\\n\\r\\n    <!-- jQuery -->\\r\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js/jquery.js\'))\nresponse.write(\'"></script>\\r\\n\\r\\n    <!-- Bootstrap Core JavaScript -->\\r\\n    <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js/bootstrap.min.js\'))\nresponse.write(\'"></script>\\r\\n\\r\\n    <!-- Morris Charts JavaScript -->\\r\\n    <script src=\', escape=False)\nresponse.write(URL(\'static\',\'js/plugins/morris/raphael.min.js\'))\nresponse.write(\'></script>\\r\\n    <script src=\', escape=False)\nresponse.write(URL(\'static\',\'js/plugins/morris/morris.min.js\'))\nresponse.write(\'></script>\\r\\n    <script src=\', escape=False)\nresponse.write(URL(\'static\',\'js/plugins/morris/morris-data.js\'))\nresponse.write(\'></script>\\r\\n\\r\\n</body>\\r\\n\\r\\n</html>\', escape=False)'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.AttributeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.AttributeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.AttributeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.AttributeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.AttributeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.AttributeError object>'
+p23
+sS'__reduce__'
+p24
+S'<built-in method __reduce__ of exceptions.AttributeError object>'
+p25
+sS'__str__'
+p26
+S"<method-wrapper '__str__' of exceptions.AttributeError object>"
+p27
+sS'__format__'
+p28
+S'<built-in method __format__ of exceptions.AttributeError object>'
+p29
+sS'__getattribute__'
+p30
+S"<method-wrapper '__getattribute__' of exceptions.AttributeError object>"
+p31
+sS'__class__'
+p32
+S"<type 'exceptions.AttributeError'>"
+p33
+sS'__unicode__'
+p34
+S'<built-in method __unicode__ of exceptions.AttributeError object>'
+p35
+sS'__delattr__'
+p36
+S"<method-wrapper '__delattr__' of exceptions.AttributeError object>"
+p37
+sS'__subclasshook__'
+p38
+S'<built-in method __subclasshook__ of type object>'
+p39
+sS'__repr__'
+p40
+S"<method-wrapper '__repr__' of exceptions.AttributeError object>"
+p41
+sS'args'
+p42
+S'("\'NoneType\' object has no attribute \'first_name\'",)'
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.AttributeError object>'
+p47
+sS'__doc__'
+p48
+S"'Attribute not found.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.AttributeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"'NoneType' object has no attribute 'first_name'"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\xeb\xbb\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>EasyCommerce</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-96e49785-3064-456b-af6f-9eb4271740cc<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_authtest</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-5dd65f24-238e-4b96-850e-fae60d57d9d3<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_easycommerce</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_examples</td><td style="vertical-align:top;">:</td><td><div>True<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_formtest</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-d260078c-3787-45e9-a1cf-8d412ebaf021<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw1</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-ab3fb844-ac15-4ca3-b98d-eab9b0a773fe<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw1p1</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-661cb64b-6d46-4a81-94fa-473a45f2e6b7<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw1p2</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-773faea3-8b0b-4071-b52e-59ed993b51ef<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw1p3</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9cd9c0cf-6010-4877-8a90-5a5d8427e194<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw1p4</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-73d8c3a2-999c-42f1-9925-6ec173e5bc5c<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw2</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c18bf172-12c7-42ac-92bc-56605e68cc86<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw2p1</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-6e4f77b3-f20a-4e6c-bcb3-afdf22eee9a0<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw2p2</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-b80b48fa-5451-4f03-9924-d821f7de16e1<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw2p3</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-4e2d9803-779c-49f9-8a2c-834a52ef01cb<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw2p4</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-3501a4f9-b8d2-443f-92fb-762516f0cceb<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_hw3</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-1a5643de-8c08-4758-a4c5-f2a5cdcaeac5<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_images</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-2894bca0-2484-40b7-93d4-cb521c4f3b76<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_myapp</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-bfb47796-af64-409f-9b2f-fbc208274fce<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_styletest</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-fe25fda2-8a77-4ff1-9a5e-89d6653846db<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_test</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-5fb76ed6-2038-4b0e-ac4a-17a7f5b23016<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-59000301-13b5-4217-85ee-da98cf499d94<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_myapp=127.0.0.1-bfb47796-af64-409f-9b2f-fbc208274fce; session_id_images=127.0.0.1-2894bca0-2484-40b7-93d4-cb521c4f3b76; session_id_examples=True; session_id_hw1p1=127.0.0.1-661cb64b-6d46-4a81-94fa-473a45f2e6b7; session_id_hw1p3=127.0.0.1-9cd9c0cf-6010-4877-8a90-5a5d8427e194; session_id_hw1p4=127.0.0.1-73d8c3a2-999c-42f1-9925-6ec173e5bc5c; session_id_hw1p2=127.0.0.1-773faea3-8b0b-4071-b52e-59ed993b51ef; session_id_hw1=127.0.0.1-ab3fb844-ac15-4ca3-b98d-eab9b0a773fe; session_id_styletest=127.0.0.1-fe25fda2-8a77-4ff1-9a5e-89d6653846db; session_id_formtest=127.0.0.1-d260078c-3787-45e9-a1cf-8d412ebaf021; session_id_authtest=127.0.0.1-5dd65f24-238e-4b96-850e-fae60d57d9d3; session_id_test=127.0.0.1-5fb76ed6-2038-4b0e-ac4a-17a7f5b23016; session_id_hw2p1=127.0.0.1-6e4f77b3-f20a-4e6c-bcb3-afdf22eee9a0; session_id_hw2p2=127.0.0.1-b80b48fa-5451-4f03-9924-d821f7de16e1; session_id_hw2p3=127.0.0.1-4e2d9803-779c-49f9-8a2c-834a52ef01cb; session_id_hw2p4=127.0.0.1-3501a4f9-b8d2-443f-92fb-762516f0cceb; session_id_hw2=127.0.0.1-c18bf172-12c7-42ac-92bc-56605e68cc86; session_id_hw3=127.0.0.1-1a5643de-8c08-4758-a4c5-f2a5cdcaeac5; session_id_welcome=127.0.0.1-59000301-13b5-4217-85ee-da98cf499d94; session_id_admin=127.0.0.1-96e49785-3064-456b-af6f-9eb4271740cc; session_id_easycommerce=127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/EasyCommerce/default/manager</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>17147</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>DESKTOP-UIDEION</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\welcome\\\\&#x27;, &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\EasyCommerce\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x3575cb0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;DESKTOP-UIDEION&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_myapp=127.0.0.1-bfb47796-af64-409f-9b2f-fbc208274fce; session_id_images=127.0.0.1-2894bca0-2484-40b7-93d4-cb521c4f3b76; session_id_examples=True; session_id_hw1p1=127.0.0.1-661cb64b-6d46-4a81-94fa-473a45f2e6b7; session_id_hw1p3=127.0.0.1-9cd9c0cf-6010-4877-8a90-5a5d8427e194; session_id_hw1p4=127.0.0.1-73d8c3a2-999c-42f1-9925-6ec173e5bc5c; session_id_hw1p2=127.0.0.1-773faea3-8b0b-4071-b52e-59ed993b51ef; session_id_hw1=127.0.0.1-ab3fb844-ac15-4ca3-b98d-eab9b0a773fe; session_id_styletest=127.0.0.1-fe25fda2-8a77-4ff1-9a5e-89d6653846db; session_id_formtest=127.0.0.1-d260078c-3787-45e9-a1cf-8d412ebaf021; session_id_authtest=127.0.0.1-5dd65f24-238e-4b96-850e-fae60d57d9d3; session_id_test=127.0.0.1-5fb76ed6-2038-4b0e-ac4a-17a7f5b23016; session_id_hw2p1=127.0.0.1-6e4f77b3-f20a-4e6c-bcb3-afdf22eee9a0; session_id_hw2p2=127.0.0.1-b80b48fa-5451-4f03-9924-d821f7de16e1; session_id_hw2p3=127.0.0.1-4e2d9803-779c-49f9-8a2c-834a52ef01cb; session_id_hw2p4=127.0.0.1-3501a4f9-b8d2-443f-92fb-762516f0cceb; session_id_hw2=127.0.0.1-c18bf172-12c7-42ac-92bc-56605e68cc86; session_id_hw3=127.0.0.1-1a5643de-8c08-4758-a4c5-f2a5cdcaeac5; session_id_welcome=127.0.0.1-59000301-13b5-4217-85ee-da98cf499d94; session_id_admin=127.0.0.1-96e49785-3064-456b-af6f-9eb4271740cc; session_id_easycommerce=127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::30ed:f604:3921:79ba%17</div></td></tr><tr><td><div>169.233.240.75</div></td></tr><tr><td><div>DESKTOP-UIDEION.ucsc.edu</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>192.168.56.1</div></td></tr><tr><td><div>DESKTOP-UIDEION</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>fe80::7c0d:227e:59f9:8aa0%15</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/EasyCommerce/default/manager</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>17147</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/EasyCommerce/default/manager</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>DESKTOP-UIDEION</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x026050D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x03542B90&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x04D42C30&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x026050D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x03542B90&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x04D42C30&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>manager</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\welcome\\\\&#x27;, &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py\\\\applications\\\\EasyCommerce\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x3575cb0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;DESKTOP-UIDEION&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\lvr20\\\\PycharmProjects\\\\EasyCommerce\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>fe80::30ed:f604:3921:79ba%17</div></td></tr><tr><td><div>169.233.240.75</div></td></tr><tr><td><div>DESKTOP-UIDEION.ucsc.edu</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>192.168.56.1</div></td></tr><tr><td><div>DESKTOP-UIDEION</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>fe80::7c0d:227e:59f9:8aa0%15</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 12, 12, 55, 31, 515000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/EasyCommerce/default/manager</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 12, 19, 55, 31, 515000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x04D555B0&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\gluon\\restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 04ADE8D8, file "C:\\User...EasyCommerce\\views\\default/manager.html", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code=\'response.write(\\\'<!DOCTYPE html>\\\\r\\\\n<html lang="e...pt>\\\\r\\\\n\\\\r\\\\n</body>\\\\r\\\\n\\\\r\\\\n</html>\\\', escape=False)\', environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, ...}, layer=r\'C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2...lications\\EasyCommerce\\views\\default/manager.html\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\views\\default\\manager.html'
+p88
+sg64
+(dp89
+S'lang'
+p90
+S'undefined'
+p91
+sS'html'
+p92
+g91
+ssg70
+I2
+sg71
+(dp93
+I1
+S'response.write(\'<!DOCTYPE html>\\r\\n<html lang="en">\\r\\n\\r\\n<head>\\r\\n\\r\\n    <meta charset="utf-8">\\r\\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\\r\\n    <meta name="viewport" content="width=device-width, initial-scale=1">\\r\\n    <meta name="description" content="">\\r\\n    <meta name="author" content="">\\r\\n\\r\\n    <title>\\r\\n        \', escape=False)'
+p94
+sI2
+S'response.write(db.auth_user[auth.user_id].first_name)'
+p95
+sI3
+S"response.write('\\r\\n        ', escape=False)"
+p96
+sI4
+S'response.write(db.auth_user[auth.user_id].last_name)'
+p97
+sI5
+S"response.write('\\r\\n    </title>\\r\\n\\r\\n    <!-- Bootstrap Core CSS -->\\r\\n    <link href=', escape=False)"
+p98
+sI6
+S"response.write(URL('static','css/bootstrap.min.css'))"
+p99
+sI7
+S'response.write(\' rel="stylesheet">\\r\\n\\r\\n    <!-- Custom CSS -->\\r\\n    <link href=\', escape=False)'
+p100
+sI8
+S"response.write(URL('static','css/sb-admin.css'))"
+p101
+sI9
+S'response.write(\' rel="stylesheet">\\r\\n\\r\\n    <!-- Morris Charts CSS -->\\r\\n    <link href=\', escape=False)'
+p102
+sI10
+S"response.write(URL('static','css/plugins/morris.css'))"
+p103
+sI11
+S'response.write(\'rel="stylesheet">\\r\\n\\r\\n    <!-- Custom Fonts -->\\r\\n    <link href=\', escape=False)'
+p104
+sI12
+S"response.write(URL('static','font-awesome/css/font-awesome.min.css'))"
+p105
+ssg83
+S'()'
+p106
+sg85
+S'<module>'
+p107
+sasS'pyver'
+p108
+S'Python 2.7: C:\\Python27\\python.exe (prefix: C:\\Python27)'
+p109
+sS'session'
+p110
+g57
+(S'sX\x08\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>25deea09-eb83-4396-9e6d-9319d2ce0b29</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 12, 12, 51, 23, 243000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>m@e.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Paula</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>1L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Espiritu</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">1</td><td style="vertical-align:top;">:</td><td><div>user_1</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp111
+sS'etype'
+p112
+S"<type 'exceptions.AttributeError'>"
+p113
+sS'date'
+p114
+S'Sun Mar 12 12:55:31 2017'
+p115
+sS'response'
+p116
+g57
+(S's&=\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x04446080&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_easycommerce</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">logo</td><td style="vertical-align:top;">:</td><td><div><a class="navbar-brand" href="http://www.web2py.com/" id="web2py-logo"><b>web<span>2</span>py</b>&trade;&nbsp;</a></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div><table><tr><td><div>Home</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/EasyCommerce/default/index</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>My Sites</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/site</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>This App</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Design</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/design/EasyCommerce</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Controller</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/controllers/default.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>View</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/views/default/manager.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>DB Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/models/db.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Menu Model</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/models/menu.py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Config.ini</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/private/appconfig.ini</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Layout</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/views/layout.html</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Stylesheet</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/edit/EasyCommerce/static/css/web2py-bootstrap3.css</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/EasyCommerce/appadmin/index</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Errors</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/errors/EasyCommerce</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>About</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/admin/default/about/EasyCommerce</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>web2py.com</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Download</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/download</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Support</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/support</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Demo</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/demo_admin</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Quick Examples</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/examples/default/examples</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>FAQ</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/AlterEgo</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Videos</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/videos/</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Free Applications</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/appliances</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2py.com/plugins</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://web2pyslices.com/</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Documentation</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>#</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Online book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book</div></td></tr></table></div></td></tr><tr><td><div><li class="divider"></li></div></td></tr><tr><td><div><table><tr><td><div>Preface</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/00</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Introduction</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/01</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Python</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/02</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Overview</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/03</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Core</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/04</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>The Views</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/05</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Database</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/06</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Forms and Validators</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/07</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Email and SMS</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/08</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Access Control</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/09</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Services</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/10</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Ajax Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/11</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Components and Plugins</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/12</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Deployment Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/13</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Other Recipes</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/14</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Helping web2py</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/book/default/chapter/15</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Buy web2py\'s book</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://stores.lulu.com/web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Community</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>None</div></td></tr><tr><td><div><table><tr><td><div><table><tr><td><div>Groups</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://www.web2py.com/examples/default/usergroups</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Twitter</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://twitter.com/web2py</div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Live Chat</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://webchat.freenode.net/?channels=web2py</div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/manager/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_easycommerce</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\sessions\\05f\\125\\127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa&#x27;, mode &#x27;rb+&#x27; at 0x04948DE0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\sessions\\127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>2d367fdfb83abc9728030730015a5cf9</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-c1f279d2-257c-4990-bc8e-ef793762e2aa</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_easycommerce</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>EasyCommerce</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subtitle</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Easycommerce</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/manager.html</div></td></tr></table></div>'
+tRp117
+sS'locals'
+p118
+(dp119
+S'OBJECT'
+p120
+S"<class 'gluon.html.OBJECT'>"
+p121
+sS'SQLDB'
+p122
+S"<class 'pydal.base.DAL'>"
+p123
+sg110
+S"<Storage {'_formkey[vendor_/1]': ['ea1b9691-d0e9...76fc4', 'a34cc60b-34c7-41ef-82a9-03a18f09a012']}>"
+p124
+sS'LINK'
+p125
+S"<class 'gluon.html.LINK'>"
+p126
+sS'BR'
+p127
+S"<class 'gluon.html.BR'>"
+p128
+sS'local_import'
+p129
+S'<function <lambda>>'
+p130
+sS'OPTGROUP'
+p131
+S"<class 'gluon.html.OPTGROUP'>"
+p132
+sS'__package__'
+p133
+S'None'
+p134
+sS'PRE'
+p135
+S"<class 'gluon.html.PRE'>"
+p136
+sS'IS_INT_IN_RANGE'
+p137
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p138
+sS'IS_LOWER'
+p139
+S"<class 'gluon.validators.IS_LOWER'>"
+p140
+sS'IS_STRONG'
+p141
+S"<class 'gluon.validators.IS_STRONG'>"
+p142
+sS'cache'
+p143
+S'<gluon.cache.Cache object>'
+p144
+sS'IS_IN_DB'
+p145
+S"<class 'gluon.validators.IS_IN_DB'>"
+p146
+sS'TAG'
+p147
+S'<gluon.html.__TAG__ object>'
+p148
+sS'SQLField'
+p149
+S"<class 'pydal.objects.Field'>"
+p150
+sS'BODY'
+p151
+S"<class 'gluon.html.BODY'>"
+p152
+sS'IS_DATE_IN_RANGE'
+p153
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p154
+sS'IFRAME'
+p155
+S"<class 'gluon.html.IFRAME'>"
+p156
+sS'URL'
+p157
+S'<function URL>'
+p158
+sS'__file__'
+p159
+S"r'C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2...lications\\EasyCommerce\\views\\default/manager.html'"
+p160
+sS'db'
+p161
+S'<DAL uri="sqlite://storage.sqlite">'
+p162
+sS'auth'
+p163
+S'<gluon.tools.Auth object>'
+p164
+sS'P'
+S"<class 'gluon.html.P'>"
+p165
+sS'TFOOT'
+p166
+S"<class 'gluon.html.TFOOT'>"
+p167
+sS'XHTML'
+p168
+S"<class 'gluon.html.XHTML'>"
+p169
+sS'datetime'
+p170
+S"<module 'datetime' (built-in)>"
+p171
+sS'ON'
+p172
+S'True'
+p173
+sS'OL'
+p174
+S"<class 'gluon.html.OL'>"
+p175
+sS'TEXTAREA'
+p176
+S"<class 'gluon.html.TEXTAREA'>"
+p177
+sS'MENU'
+p178
+S"<class 'gluon.html.MENU'>"
+p179
+sS'EM'
+p180
+S"<class 'gluon.html.EM'>"
+p181
+sS'CODE'
+p182
+S"<class 'gluon.html.CODE'>"
+p183
+sS'HTTP'
+p184
+S"<class 'gluon.http.HTTP'>"
+p185
+sS'HR'
+p186
+S"<class 'gluon.html.HR'>"
+p187
+sS'IS_DATETIME'
+p188
+S"<class 'gluon.validators.IS_DATETIME'>"
+p189
+sS'HEAD'
+p190
+S"<class 'gluon.html.HEAD'>"
+p191
+sS'LABEL'
+p192
+S"<class 'gluon.html.LABEL'>"
+p193
+sS'CLEANUP'
+p194
+S"<class 'gluon.validators.CLEANUP'>"
+p195
+sS'SELECT'
+p196
+S"<class 'gluon.html.SELECT'>"
+p197
+sS'CENTER'
+p198
+S"<class 'gluon.html.CENTER'>"
+p199
+sS'Auth'
+p200
+S"<class 'gluon.tools.Auth'>"
+p201
+sS'DEVELOPMENT_MENU'
+p202
+g173
+sS'__builtins__'
+p203
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p204
+sS'HTML'
+p205
+S"<class 'gluon.html.HTML'>"
+p206
+sS'SQLFORM'
+p207
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p208
+sS'LOAD'
+p209
+S'<function LOAD>'
+p210
+sS'redirect'
+p211
+S'<function redirect>'
+p212
+sS'FIELDSET'
+p213
+S"<class 'gluon.html.FIELDSET'>"
+p214
+sS'IS_EQUAL_TO'
+p215
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p216
+sS'embed64'
+p217
+S'<function embed64>'
+p218
+sS'IS_LIST_OF'
+p219
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p220
+sS'__name__'
+p221
+S"'__restricted__'"
+p222
+sS'EMBED'
+p223
+S"<class 'gluon.html.EMBED'>"
+p224
+sS'_'
+S'<function _>'
+p225
+sS'FORM'
+p226
+S"<class 'gluon.html.FORM'>"
+p227
+sS'H2'
+p228
+S"<class 'gluon.html.H2'>"
+p229
+sS'H3'
+p230
+S"<class 'gluon.html.H3'>"
+p231
+sS'BUTTON'
+p232
+S"<class 'gluon.html.BUTTON'>"
+p233
+sS'H1'
+p234
+S"<class 'gluon.html.H1'>"
+p235
+sS'H6'
+p236
+S"<class 'gluon.html.H6'>"
+p237
+sS'H4'
+p238
+S"<class 'gluon.html.H4'>"
+p239
+sS'H5'
+p240
+S"<class 'gluon.html.H5'>"
+p241
+sS'UL'
+p242
+S"<class 'gluon.html.UL'>"
+p243
+sS'IS_UPPER'
+p244
+S"<class 'gluon.validators.IS_UPPER'>"
+p245
+sS'xmlescape'
+p246
+S'<function xmlescape>'
+p247
+sS'IS_TIME'
+p248
+S"<class 'gluon.validators.IS_TIME'>"
+p249
+sS'OPTION'
+p250
+S"<class 'gluon.html.OPTION'>"
+p251
+sS'TITLE'
+p252
+S"<class 'gluon.html.TITLE'>"
+p253
+sS'CRYPT'
+p254
+S"<class 'gluon.validators.CRYPT'>"
+p255
+sS'IS_EMPTY_OR'
+p256
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p257
+sS'MARKMIN'
+p258
+S"<class 'gluon.html.MARKMIN'>"
+p259
+sS'INPUT'
+p260
+S"<class 'gluon.html.INPUT'>"
+p261
+sS'STRONG'
+p262
+S"<class 'gluon.html.STRONG'>"
+p263
+sS'COL'
+p264
+S"<class 'gluon.html.COL'>"
+p265
+sS'SCRIPT'
+p266
+S"<class 'gluon.html.SCRIPT'>"
+p267
+sS'invoices'
+p268
+S'<Rows (0)>'
+p269
+sS'TABLE'
+p270
+S"<class 'gluon.html.TABLE'>"
+p271
+sS'IS_IPV4'
+p272
+S"<class 'gluon.validators.IS_IPV4'>"
+p273
+sS'IS_LENGTH'
+p274
+S"<class 'gluon.validators.IS_LENGTH'>"
+p275
+sS'IS_IPV6'
+p276
+S"<class 'gluon.validators.IS_IPV6'>"
+p277
+sS'XML'
+p278
+S"<class 'gluon.html.XML'>"
+p279
+sS'B'
+S"<class 'gluon.html.B'>"
+p280
+sS'IMG'
+p281
+S"<class 'gluon.html.IMG'>"
+p282
+sS'SQLTABLE'
+p283
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p284
+sS'IS_MATCH'
+p285
+S"<class 'gluon.validators.IS_MATCH'>"
+p286
+sS'IS_ALPHANUMERIC'
+p287
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p288
+sS'SPAN'
+p289
+S"<class 'gluon.html.SPAN'>"
+p290
+sS'IS_JSON'
+p291
+S"<class 'gluon.validators.IS_JSON'>"
+p292
+sS'IS_IPADDRESS'
+p293
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p294
+sS'IS_SLUG'
+p295
+S"<class 'gluon.validators.IS_SLUG'>"
+p296
+sS'BEAUTIFY'
+p297
+S"<class 'gluon.html.BEAUTIFY'>"
+p298
+sS'META'
+p299
+S"<class 'gluon.html.META'>"
+p300
+sS'IS_DATE'
+p301
+S"<class 'gluon.validators.IS_DATE'>"
+p302
+sS'IS_EMAIL'
+p303
+S"<class 'gluon.validators.IS_EMAIL'>"
+p304
+sS'IS_NOT_EMPTY'
+p305
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p306
+sS'IS_FLOAT_IN_RANGE'
+p307
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p308
+sS'TBODY'
+p309
+S"<class 'gluon.html.TBODY'>"
+p310
+sS'CAT'
+p311
+S"<class 'gluon.html.CAT'>"
+p312
+sS'Field'
+p313
+S"<class 'pydal.objects.Field'>"
+p314
+sS'IS_LIST_OF_EMAILS'
+p315
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p316
+sS'DIV'
+p317
+S"<class 'gluon.html.DIV'>"
+p318
+sS'LEGEND'
+p319
+S"<class 'gluon.html.LEGEND'>"
+p320
+sS'COLGROUP'
+p321
+S"<class 'gluon.html.COLGROUP'>"
+p322
+sS'DAL'
+p323
+S"<class 'pydal.base.DAL'>"
+p324
+sS'ASSIGNJS'
+p325
+S'<function ASSIGNJS>'
+p326
+sS'TR'
+p327
+S"<class 'gluon.html.TR'>"
+p328
+sS'LI'
+p329
+S"<class 'gluon.html.LI'>"
+p330
+sS'TH'
+p331
+S"<class 'gluon.html.TH'>"
+p332
+sS'TD'
+p333
+S"<class 'gluon.html.TD'>"
+p334
+sS'IS_URL'
+p335
+S"<class 'gluon.validators.IS_URL'>"
+p336
+sS'A'
+S"<class 'gluon.html.A'>"
+p337
+sS'STYLE'
+p338
+S"<class 'gluon.html.STYLE'>"
+p339
+sS'IS_DATETIME_IN_RANGE'
+p340
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p341
+sS'IS_IMAGE'
+p342
+S"<class 'gluon.validators.IS_IMAGE'>"
+p343
+sS'I'
+S"<class 'gluon.html.I'>"
+p344
+sS'IS_NOT_IN_DB'
+p345
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p346
+sg116
+S"<Storage {'body': <cStringIO.StringO object at 0... at 0x04D42CB0>, 'view': 'default/manager.html'}>"
+p347
+sS'THEAD'
+p348
+S"<class 'gluon.html.THEAD'>"
+p349
+sS'ANY_OF'
+p350
+S"<class 'gluon.validators.ANY_OF'>"
+p351
+sS'IS_NULL_OR'
+p352
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p353
+sg56
+S"<Storage {'_vars': None, 'function': 'manager', ...Commerce\\\\web2py\\\\applications\\\\EasyCommerce\\\\'}>"
+p354
+sS'IS_EXPR'
+p355
+S"<class 'gluon.validators.IS_EXPR'>"
+p356
+sS'T'
+S'<gluon.languages.translator object>'
+p357
+sS'IS_IN_SET'
+p358
+S"<class 'gluon.validators.IS_IN_SET'>"
+p359
+sS'IS_UPLOAD_FILENAME'
+p360
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p361
+sS'TT'
+p362
+S"<class 'gluon.html.TT'>"
+p363
+sS'IS_DECIMAL_IN_RANGE'
+p364
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p365
+sssS'traceback'
+p366
+S'Traceback (most recent call last):\n  File "C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "C:\\Users\\lvr20\\PycharmProjects\\EasyCommerce\\web2py\\applications\\EasyCommerce\\views\\default/manager.html", line 2, in <module>\n    <html lang="en">\nAttributeError: \'NoneType\' object has no attribute \'first_name\'\n'
+p367
+s.

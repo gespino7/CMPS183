@@ -98,5 +98,48 @@ def download():
     """
     return response.download(request, db)
 
+@auth.requires_login()
+def vendor_add():
+    vendor = db.vendor_[request.args(0)]
+    if vendor is not None:
+        form = SQLFORM(db.vendor_, vendor,
+                       showid=False,
+                       deletable=True,
+                       submit_button='Update your business',
+                       )
+    elif vendor is None:
+        form = SQLFORM(db.vendor_,
+                       submit_button='Create your business',
+                       )
+    if form.process(keepvalues=True).accepted:
+        response.flash = 'business created'
+        redirect(URL('default', 'vendor'))
+    elif form.errors:
+        response.flash = 'please complete your business information'
+    else:
+        response.flash = 'please edit your business information'
+    return dict(form=form)
 
+@auth.requires_login()
+def add_item():
+    item = db.item[request.args(0)]
+    type = db.item[request.args(0)]
+    form = SQLFORM(db.item, item, type,
+                   submit_button='Add item')
+    grid = SQLFORM.smartgrid(db.item)
+    return dict(grid=grid,form=form)
 
+def id():
+    vendor = db.vendor_[request.args(0)]
+    items = db(db.item.seller == vendor).select().sort(lambda p: p.seller)
+    categories = db(db.item.seller == vendor).select().sort(lambda p: p.category)
+    return dict(items=items,categories=categories,vendor=vendor)
+
+def stores():
+    stores = db(db.vendor_).select().sort(lambda p: p.business_name)
+    return dict(stores=stores)
+
+def item():
+    item = db.item[request.args(0)]
+    items = db(db.item).select()
+    return dict(item=item,items=items)

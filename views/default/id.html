@@ -1,0 +1,73 @@
+{{extend 'layout.html'}}
+<link href="{{=URL('static', 'css/main.css')}}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Rubik|Open+Sans" rel="stylesheet">
+
+<!--Banner for store, figure out how to adjust this-->
+{{block header}}
+    <header class="container-fluid background">
+      <div class="jumbotron text-center">
+        {{if response.title:}}
+            {{if vendor is not None:}}
+                <h1>{{=vendor.business_name}}
+                <small>{{=response.subtitle or ''}}</small></h1>
+            {{else:}}
+                <h1>Easy Commerce</h1>
+            {{pass}}
+        {{pass}}
+      </div>
+    </header>
+{{end}}
+
+<!--Creates a container for a single category. Each subsequent div represents
+    another row of clickable images in the vendor's store. Needs database
+    for image/price/name retrieval. Also adjust height. -->
+<!-- Need to add javascript for image size adjustment -->
+<html>
+
+{{current = 0}}
+{{i = 0}}
+<h4>initialized vars</h4>
+{{for items in items:}}
+    <h4>hey there</h4>
+{{pass}}
+{{for type in categories:}}
+<h4>in category loop</h4>
+    {{if type.category != current:}}
+        <div id="section">
+            {{current = type.category}}
+            <h2 class="left_align"><u>{{=type.category}}</u></h2>
+            {{for item in items:}}
+                {{if current == item.category:}}
+                    {{if i%3==0 or i==0:}}
+                        <div id="img_row" class="container">
+                    {{pass}}
+
+                    <div id="img_block">
+                        <a href="{{=URL('EasyCommerce','default','item',args=[item.id])}}">
+                            <img class="center" src="{{=URL('download', args=item.image)}}" />
+                        <p class="left vertical">
+                            {{=item.item_name}}
+                        </p>
+                        <p class="right vertical">
+                            ${{=item.price}}
+                        </p>
+                        </a>
+                    </div>
+
+                    {{i = i+1}}
+                    <!-- Close row div if at end of row-->
+                    {{if i%3==0:}}
+                        </div>
+                    {{pass}}
+                {{pass}}
+            {{pass}}
+
+            <!-- Close row div if at end of category but not end of row-->
+            {{if i%3!=0:}}
+                </div>
+            {{pass}}
+            {{i = 0}}
+        </div>
+    {{pass}}
+{{pass}}
+</html>

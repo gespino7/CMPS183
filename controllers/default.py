@@ -56,3 +56,47 @@ def call():
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
     return service()
+
+def confirmation():
+    mail = auth.settings.mailer
+    mail.settings.server = 'logging'
+    mail.settings.login = None
+    customerOrder = True
+    if customerOrder == True:
+        mail.settings.sender = "gespino7@ucsc.edu"
+        # headers = {'Return-Path': 'abaskar@ucsc.edu'}
+        # message = response.render('orderapproved.html', "Order approved")
+        mail.send(to=['abaskar@ucsc.edu'],
+                  subject='Order Confirmation',
+                  message="Order confirmed.")
+        n = 10*60
+        while n > 0:
+            minute = n/60
+            print (minute + " minutes")
+            n = n - 1
+            if n == 0:
+                mail.send(to=['abaskar@ucsc.edu'],
+                          subject='Order Complete',
+                          message='Order is ready for pickup!')
+    else:
+        mail.settings.sender = "gespino7@ucsc.edu"
+        # headers = {'Return-Path': 'abaskar@ucsc.edu'}
+        # message = response.render('ordernotapproved.html', "Order not approved")
+        mail.send(to=['abaskar@ucsc.edu'],
+                  subject='Order Declined',
+                  message="Order declined. Please order a different item.")
+
+    return dict()
+
+
+# def ordernotapproved():
+#     return dict()
+
+
+# def countdown(n):
+#     while n > 0:
+#         minute = n / 60
+#         print (minute + "minutes")
+#         n = n - 1
+#     print("Ready for Pickup")
+#     return n;

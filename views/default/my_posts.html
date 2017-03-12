@@ -176,47 +176,47 @@
                         </ol>
                     </div>
                 </div>
+                <div class="row">
 
+                    {{for item in items:}}
+                        <div class="col-lg-5">
+                        <div class="w3-card-12">
+                            <br>
+                            {{if item.image:}}
+                                <img height="100px" src="{{=URL('download',args=item.image)}}">
+                            {{else:}}
+                                <img height="100px" src="/EasyCommerce/static/ecommerce_1.jpg">
+                            {{pass}}
+                                <div class="w3-container w3-center">
+                                    <li>{{=item.title}}<a href="{{=URL("default","my_posts",args=[item.id])}}"> Edit</a></li>
+                                    <p>{{=item.description}}</p>
+                                </div>
+                        </div>
+                        </div>
+                    {{pass}}
+
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i>
+                            {{if request.args(0):}}
+                            Edit your post
+                        {{else:}}
+                            Create new post
+                        {{pass}}
+                            </li>
+                        </ol>
+                    </div>
+                </div>
                 <!-- Page Heading -->
                 <div class="row">
-                             <table class="table">
-                                <thead>
-                                  <tr>
-                                       <th>Title</th>
-                                       <th>Description</th>
-                                       <th>Image</th>
-                                       <th>Price</th>
-                                       <th>Amount</th>
-                                       <th>Edit item</th>
-                                  </tr>
-                                </thead>
-                                <tbody id="tbody_id1">
-                                {{for item in items:}}
-                                  <tr>
-                                     <td>{{=item.title}}</td>
-                                      <td>{{=item.description}}</td>
-                                      {{if item.image:}}
-                                        <td><img width="200px" src="{{=URL('download',args=item.image)}}"></td>
-                                      {{else:}}
-                                        <td></td>
-                                      {{pass}}
-                                      <td>{{=item.price}}</td>
-                                      <td>{{=item.amount}}</td>
-
-                                      <td>
-                                          <a href="{{=URL('default','my_posts',args=[item.id])}}">Edit</a>
-                                      </td>
-                                  </tr>
-                                {{pass}}
-                                </tbody>
-                              </table>
-
-                        {{if request.args(0):}}
-                            <p>Edit your post</p>
-                        {{else:}}
-                            <p>Create new post</p>
-                        {{pass}}
+                        <div class="col-lg-12">
                         {{=form}}
+                        </div>
                 </div>
                 <!-- /.row -->
 

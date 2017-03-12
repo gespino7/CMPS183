@@ -8,12 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-
-    <title>Customer orders</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -44,17 +38,21 @@
         });
 
     </script>
+    <title>
+        {{=db.auth_user[auth.user_id].first_name}} {{=db.auth_user[auth.user_id].last_name}}
+    </title>
+
     <!-- Bootstrap Core CSS -->
-    <link href={{=URL('static','css/bootstrap.min.css')}} rel="stylesheet">
+    <link href={{=URL( 'static', 'css/bootstrap.min.css')}} rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href={{=URL('static','css/sb-admin.css')}} rel="stylesheet">
+    <link href={{=URL( 'static', 'css/sb-admin.css')}} rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href={{=URL('static','css/plugins/morris.css')}}rel="stylesheet">
+    <link href={{=URL( 'static', 'css/plugins/morris.css')}}rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href={{=URL('static','font-awesome/css/font-awesome.min.css')}} rel="stylesheet" type="text/css">
+    <link href={{=URL( 'static', 'font-awesome/css/font-awesome.min.css')}} rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,7 +60,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -176,14 +173,15 @@
                     <li class="active">
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Main page</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="{{=URL("default","manager")}}"><i class="fa fa-bar-chart"></i> My dashboard</a>
+                    </li>
                     </li>
                     <li>
                         <a href="{{=URL("default","customer_orders")}}"><i class="fa fa-usd"></i> Customer orders</a>
                     </li>
                     <li>
-                        <a href="{{=URL("default","my_posts.html")}}"><i class="fa fa-list"></i> My posts</a>
+                        <a href="{{=URL("default","my_posts")}}"><i class="fa fa-list"></i> My posts</a>
                     </li>
                 </ul>
             </div>
@@ -193,8 +191,8 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
-                   <!-- Page Heading -->
-                <div class="row">
+
+              <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Customer orders
@@ -251,6 +249,8 @@
                       </table>
                 </div>
 
+                <!-- /.row -->
+
             </div>
             <!-- /.container-fluid -->
 
@@ -267,9 +267,9 @@
     <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src={{=URL('static','js/plugins/morris/raphael.min.js')}}></script>
-    <script src={{=URL('static','js/plugins/morris/morris.min.js')}}></script>
-    <script src={{=URL('static','js/plugins/morris/morris-data.js')}}></script>
+    <script src={{=URL( 'static', 'js/plugins/morris/raphael.min.js')}}></script>
+    <script src={{=URL( 'static', 'js/plugins/morris/morris.min.js')}}></script>
+    <script src={{=URL( 'static', 'js/plugins/morris/morris-data.js')}}></script>
 
 </body>
 

@@ -21,17 +21,10 @@
 <!--Creates a container for a single category. Each subsequent div represents
     another row of clickable images in the vendor's store. Needs database
     for image/price/name retrieval. Also adjust height. -->
-<!-- Need to add javascript for image size adjustment -->
 <html>
-
 {{current = 0}}
 {{i = 0}}
-<h4>initialized vars</h4>
-{{for items in items:}}
-    <h4>hey there</h4>
-{{pass}}
 {{for type in categories:}}
-<h4>in category loop</h4>
     {{if type.category != current:}}
         <div id="section">
             {{current = type.category}}

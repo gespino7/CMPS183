@@ -113,7 +113,7 @@ def vendor_add():
                        )
     if form.process(keepvalues=True).accepted:
         response.flash = 'business created'
-        redirect(URL('default', 'vendor'))
+        redirect(URL('default', 'stores'))
     elif form.errors:
         response.flash = 'please complete your business information'
     else:
@@ -125,9 +125,12 @@ def add_item():
     item = db.item[request.args(0)]
     type = db.item[request.args(0)]
     form = SQLFORM(db.item, item, type,
-                   submit_button='Add item')
-    grid = SQLFORM.smartgrid(db.item)
-    return dict(grid=grid,form=form)
+                   showid=False,
+                   submit_button="Add Item")
+    if form.process(keepvalues=True).accepted:
+        response.flash = 'business created'
+        redirect(URL('default', 'stores'))
+    return dict(form=form)
 
 def id():
     vendor = db.vendor_[request.args(0)]

@@ -41,7 +41,8 @@ db.define_table('item',
                 Field('thumbnail', 'upload'),
                 Field('price', 'double'),
                 Field('status', 'boolean', default=False),
-                Field('category', requires=IS_NOT_EMPTY()))
+                Field('category', requires=IS_NOT_EMPTY()),
+                migrate='item.table')
 
 #Invoice DB ------------------
 db.define_table('invoice',

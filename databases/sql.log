@@ -1,4 +1,4 @@
-timestamp: 2017-03-12T12:53:44.885000
+timestamp: 2017-03-12T13:31:24.867000
 CREATE TABLE auth_user(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(128),
@@ -10,21 +10,21 @@ CREATE TABLE auth_user(
     registration_id CHAR(512)
 );
 success!
-timestamp: 2017-03-12T12:53:44.962000
+timestamp: 2017-03-12T13:31:24.907000
 CREATE TABLE auth_group(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     role CHAR(512),
     description TEXT
 );
 success!
-timestamp: 2017-03-12T12:53:45.010000
+timestamp: 2017-03-12T13:31:24.954000
 CREATE TABLE auth_membership(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
 );
 success!
-timestamp: 2017-03-12T12:53:45.052000
+timestamp: 2017-03-12T13:31:24.995000
 CREATE TABLE auth_permission(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
@@ -33,7 +33,7 @@ CREATE TABLE auth_permission(
     record_id INTEGER
 );
 success!
-timestamp: 2017-03-12T12:53:45.100000
+timestamp: 2017-03-12T13:31:25.050000
 CREATE TABLE auth_event(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     time_stamp TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE auth_event(
     description TEXT
 );
 success!
-timestamp: 2017-03-12T12:53:45.141000
+timestamp: 2017-03-12T13:31:25.096000
 CREATE TABLE auth_cas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -53,7 +53,7 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2017-03-12T12:53:45.187000
+timestamp: 2017-03-12T13:31:25.140000
 CREATE TABLE vendor_(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name CHAR(512),
@@ -66,7 +66,7 @@ CREATE TABLE vendor_(
     date TIMESTAMP
 );
 success!
-timestamp: 2017-03-12T12:53:45.233000
+timestamp: 2017-03-12T13:31:25.197000
 CREATE TABLE user_(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name CHAR(512),
@@ -77,7 +77,7 @@ CREATE TABLE user_(
     date TIMESTAMP
 );
 success!
-timestamp: 2017-03-12T12:53:45.293000
+timestamp: 2017-03-12T13:31:25.242000
 CREATE TABLE item(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     seller INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
@@ -91,7 +91,7 @@ CREATE TABLE item(
     category CHAR(512)
 );
 success!
-timestamp: 2017-03-12T12:53:45.349000
+timestamp: 2017-03-12T13:31:25.290000
 CREATE TABLE invoice(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     seller_id CHAR(512),
@@ -102,7 +102,7 @@ CREATE TABLE invoice(
     status CHAR(512)
 );
 success!
-timestamp: 2017-03-12T12:53:45.395000
+timestamp: 2017-03-12T13:31:25.340000
 CREATE TABLE invoice_(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     seller CHAR(512),
@@ -113,7 +113,7 @@ CREATE TABLE invoice_(
     status CHAR(512)
 );
 success!
-timestamp: 2017-03-12T12:53:45.445000
+timestamp: 2017-03-12T13:31:25.389000
 CREATE TABLE cc(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name CHAR(512),

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer Orders</title>
+    <title>Customer orders</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -36,10 +36,16 @@
         });
 
     </script>
+      <style>
+        a#a_title{
+            font-size: 35px;
+        }
+
+    </style>
 </head>
 <body>
    <div class="container">
-  <h2>{{=db.auth_user[auth.user_id].first_name}}'s Customer Orders</h2>
+       <a id ="a_title" href ="{{=URL("default","customer_orders")}}">{{=db.auth_user[auth.user_id].first_name}}'s Customer Orders</a>
   <p>Below are orders of past 1 month</p>
        <select id="select_id1">
             <option value="">Select order status:</option>

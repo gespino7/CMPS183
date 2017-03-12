@@ -28,11 +28,10 @@ db.define_table('user_',
                 Field('phone_num'),
                 Field('payment_info'),
                 Field('date','datetime'),
-                 format='%(name)s')
-
-
+                format='%(name)s')
 
 db.define_table('item',
+                Field('seller_id','reference auth_user',default = auth.user_id),
                 Field('title'),
                 Field('description','text'),
                 Field('image','upload'),
@@ -41,8 +40,8 @@ db.define_table('item',
                 )
 
 db.define_table('invoice',
-                Field('seller_id'),
-                Field('customer_id'),
+                Field('seller_id','reference auth_user'),
+                Field('customer_id','reference auth_user'),
                 Field('item_id'),
                 Field('amount'),
                 Field('date','datetime',default=request.now),

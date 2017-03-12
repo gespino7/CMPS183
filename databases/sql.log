@@ -237,3 +237,27 @@ CREATE TABLE vendor(
     address CHAR(512),
     date TIMESTAMP
 );
+timestamp: 2017-03-10T10:14:14.248341
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    title CHAR(512),
+    description TEXT,
+    image CHAR(512),
+    price DOUBLE,
+    amount INTEGER
+);
+success!
+DROP TABLE item;
+success!
+timestamp: 2017-03-10T10:17:08.041993
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    title CHAR(512),
+    description TEXT,
+    image CHAR(512),
+    price DOUBLE,
+    amount INTEGER
+);
+success!

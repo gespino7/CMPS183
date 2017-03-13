@@ -69,6 +69,9 @@ def status_update():
         invoice.update_record(status = "pending")
     return invoice.status
 
+def testingmaps():
+    listings = db().select(db.listing.ALL)
+    return dict(listings=listings)
 
 
 def card():
@@ -162,3 +165,6 @@ def download():
 
 
 
+def testingVendorPage():
+    listings = db().select(db.listing.ALL)
+    return dict(listings=listings)

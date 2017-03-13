@@ -45,35 +45,31 @@
     </script>
 <body>
 
-<div class="w3-container">
-    <div class="w3-bar w3-xlarge w3-black w3-hover-opacity-off" id="myNavbar">
-      <a href="#" class="w3-nav-item w3-button" >Home</a>
-
-  <a href="#menu" class="w3-nav-item w3-button" >Menu</a>
-  <a href="#details" class="w3-nav-item w3-button" >Details</a>
-  <a href="#reviews" class="w3-nav-item w3-button" >Reviews</a>
-  <a href="#deals" class="w3-nav-item w3-button" >
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-  </a>
 
 </div>
-<div class="w3-container w3-padding-64 "  id="menu">
+<div class="w3-container w3-padding-64 w3-padding-64 "  id="menu">
     <div class="w3-row-padding">
         {{for listing in listings:}}
-         <div class="w3-third "  id="item" >
-               <img src="{{=URL('download', args=listing.image)}}"  class="w3-margin-right" style="width:100%">
-              <div class="w3-card-24" style="width:100%">
-                <header class="w3-container ">
-                  <h3>{{=listing.item_name}}</h3>
+         <div class="container w3-third"  id="vendor" >
+               <img src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+                    &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+                    &marker=AIzaSyAs2yAnU5nVe51HBK1dvqaZHhjV1UcoJJE"  class="w3-margin-right" style="width:100%">
+              <div class="w3-card" style="width:100%">
+                <header class="w3-container w3-light-gray">
+                  <h3>Name of vendor</h3>
                 </header>
-                <div class="w3-container">
-                   <button type="number" class="w3-button w3-tiny w3-blue  " value="{{=listing.price}}"   id="remove"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                     <button type="number" class="w3-button w3-tiny w3-red " value="{{=listing.price}}"  id="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                     <div class="w3-container w3-right" id="price">
-                      <p  type="number" id="value" >{{=listing.price}}</p><br>
-                  </div>
+                  <footer class="w3-container w3-light-gray">
+                      <i class="fa fa-stars" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+
+                  </footer>
+                <div class="w3-container w3-light-gray">
+
                        <div class="w3-container" id="description">
-                    <p>{{=listing.description}}</p>
+                    <p>Address here!</p>
+
                   </div>
                 </div>
               </div>

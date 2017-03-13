@@ -31,14 +31,45 @@ def customer_orders():
         print ("no status")
     return dict(invoices=invoices)
 
+@auth.requires_login()
+def my_posts():
+    invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.title)
+    if request.args(0):
+        item = db.item[request.args(0)]
+        form = SQLFORM(db.item,
+                       item,
+                       showid=False,
+                       deletable=True,
+                       submit_button="Update your post"
+                       )
+        if form.process(keepvalues=True).accepted:
+            response.flash = 'comment accepted'
+            redirect('/easycommerce/default/my_posts')
+        elif form.errors:
+            response.flash = 'please complete your post'
+        else:
+            response.flash = 'please finish your comment'
+    else:
+        form = SQLFORM(db.item,
+                       showid=False,
+                       submit_button="Create new post",
 
+                       );
+        if form.process(keepvalues=True).accepted:
+            response.flash = 'comment accepted'
+            redirect('/easycommerce/default/my_posts')
+        elif form.errors:
+            response.flash = 'please complete your post'
+        else:
+            response.flash = 'please finish your comment'
+    return dict(form=form,items=items,invoices =invoices)
 
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
     grid = SQLFORM.smartgrid(db.invoice)
-    return  dict(grid = grid)
-
+    return dict(grid = grid)
 
 @auth.requires_login()
 def manager():
@@ -98,51 +129,3 @@ def download():
     """
     return response.download(request, db)
 
-@auth.requires_login()
-def vendor_add():
-    vendor = db.vendor_[request.args(0)]
-    if vendor is not None:
-        form = SQLFORM(db.vendor_, vendor,
-                       showid=False,
-                       deletable=True,
-                       submit_button='Update your business',
-                       )
-    elif vendor is None:
-        form = SQLFORM(db.vendor_,
-                       submit_button='Create your business',
-                       )
-    if form.process(keepvalues=True).accepted:
-        response.flash = 'business created'
-        redirect(URL('default', 'stores'))
-    elif form.errors:
-        response.flash = 'please complete your business information'
-    else:
-        response.flash = 'please edit your business information'
-    return dict(form=form)
-
-@auth.requires_login()
-def add_item():
-    item = db.item[request.args(0)]
-    type = db.item[request.args(0)]
-    form = SQLFORM(db.item, item, type,
-                   showid=False,
-                   submit_button="Add Item")
-    if form.process(keepvalues=True).accepted:
-        response.flash = 'business created'
-        redirect(URL('default', 'stores'))
-    return dict(form=form)
-
-def id():
-    vendor = db.vendor_[request.args(0)]
-    items = db(db.item.seller == vendor).select().sort(lambda p: p.seller)
-    categories = db(db.item.seller == vendor).select().sort(lambda p: p.category)
-    return dict(items=items,categories=categories,vendor=vendor)
-
-def stores():
-    stores = db(db.vendor_).select().sort(lambda p: p.business_name)
-    return dict(stores=stores)
-
-def item():
-    item = db.item[request.args(0)]
-    items = db(db.item).select()
-    return dict(item=item,items=items)

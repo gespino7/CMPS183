@@ -8,36 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $(".button_class1").click(function(){
-                var x  = "#td_id"+this.value;
-                $.get("status_update",
-                        {order_id:this.value},
-                        function(data,status){
-                    alert("Data:"+data +"\nStatus:"+status);
-                    $(x).text(data)
-                    console.log(x)
-		        });
-
-            });
-            $("#select_id1").change(function () {
-                var x = "/easycommerce/default/customer_orders?status="+this.value
-                $.get("status_update",
-                        {status:this.value},
-                        function(data,status){
-                    window.location.assign(x)
-		        });
-            });
-        });
-
-    </script>
     <title>
         {{=db.auth_user[auth.user_id].first_name}} {{=db.auth_user[auth.user_id].last_name}}
     </title>
@@ -47,6 +18,7 @@
 
     <!-- Custom CSS -->
     <link href={{=URL( 'static', 'css/sb-admin.css')}} rel="stylesheet">
+    <link href="{{=URL('static','css/w3.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href={{=URL( 'static', 'css/plugins/morris.css')}}rel="stylesheet">
@@ -60,6 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -192,65 +165,69 @@
 
             <div class="container-fluid">
 
-              <div class="row">
+                <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Customer orders
+                            My posts
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Below are orders of past 1 month
+                                <i class="fa fa-dashboard"></i> Below are your posts
                             </li>
+                               <a class="w3-button w3-white w3-border w3-tiny" href="{{=URL("default","my_posts")}}#form_id">
+                         <b>New</b>
+                     </a>
+
                         </ol>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-10">
-                       <select id="select_id1">
-                            <option value="">Select order status:</option>
-                            <option value="all">All</option>
-                            <option value="pending">pending</option>
-                            <option value="confirmed">confirmed</option>
-                        </select>
-                      <table class="table">
-                        <thead>
-                          <tr>
-                               <th>Order #</th>
-                               <th>Customer #</th>
-                               <th>Item #</th>
-                               <th>Amount</th>
-                               <th>Order Time</th>
-                              <th>Order Status</th>
-                                <th>Confirm Order</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tbody_id1">
-                        {{for invoice in invoices:}}
-                          <tr>
-                             <td>{{=invoice.id}}</td>
-                              <td>{{=invoice.customer_id}}</td>
-                              <td>{{=invoice.item_id}}</td>
-                              <td>{{=invoice.amount}}</td>
-                              <td>{{=invoice.date}}</td>
-                              <td id = "td_id{{=invoice.id}}">{{=invoice.status}}</td>
-                            {{if invoice.status == "pending":}}
-                              <td>
-                                  <button class = "button_class1" value = {{=invoice.id}}>Confirm</button>
-                              </td>
-                              {{else:}}
-                              <td>
-                                  <button class = "button_class1" value = {{=invoice.id}}>Pend</button>
-                              </td>
+
+                    {{for item in items:}}
+                        <div class="col-lg-4">
+                        <div class="w3-card-12">
+                            <br>
+                            {{if item.image:}}
+                                <img height="200px" src="{{=URL('download',args=item.image)}}" style="width: 100%">
+                            {{else:}}
+                                <img  height="200px" src="/EasyCommerce/static/ecommerce_1.jpg">
                             {{pass}}
+                                <div class="w3-container w3-center">
+                                    <br>
+                                    <p>{{=item.title}}
+                                        <a class="w3-button w3-white w3-border w3-tiny" href="{{=URL("default","my_posts",args=[item.id,])}}#form_id">
+                                            <b>Edit</b>
+                                        </a>
+                                    </p>
 
-                          </tr>
+                                </div>
+                        </div>
+                        </div>
+                    {{pass}}
+
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i>
+                            {{if request.args(0):}}
+                            Edit your post
+                        {{else:}}
+                            Create new post
                         {{pass}}
-
-                        </tbody>
-                      </table>
+                            </li>
+                        </ol>
                     </div>
                 </div>
-
+                <!-- Page Heading -->
+                <div class="row" id="form_id">
+                        <div class="col-lg-12">
+                        {{=form}}
+                        </div>
+                </div>
                 <!-- /.row -->
 
             </div>

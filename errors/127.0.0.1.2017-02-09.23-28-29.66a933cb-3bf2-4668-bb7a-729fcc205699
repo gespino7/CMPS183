@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.SyntaxError'> define_table argument is not a Field or Table: <class 'pydal.objects.Field'>"
+p3
+sS'layer'
+p4
+S'/Users/LC-3/Documents/CMPS183/Project/web2py/applications/EasyCommerce/models/db.py'
+p5
+sS'code'
+p6
+S"# -*- coding: utf-8 -*-\n\n#DAL Constructor\n\ndb = DAL ('sqlite://storage.sqlite')\n\n#Table Constructor -> method to define new tables.\n#Vendor contact info.\ndb.define_table('vendor',\n                Field('name' ),\n                Field('email'),\n                Field('phone_num'),\n                Field('business_name'),\n                Field('address'),\n                Field('date','datetime'),\n                 format='%(business_name)s')\n\n#User contact info.\ndb.define_table('user',\n                Field('name' ),\n                Field('email'),\n                Field('phone_num'),\n                Field('payment_info'),\n                Field('date','datetime'),\n                 format='%(name)s')\n\n#Sale table\ndb.define_table('sale',\n                Field('seller'),\n                Field('buyer'),\n                Field)\n\n\n\n#Validations\ndb.vendor.business_name.requires = IS_NOT_IN_DB(db, db.vendor.business_name)\ndb.vendor.name.requires = IS_NOT_EMPTY()\ndb.vendor.email.requires = IS_EMAIL()\n#Regex for phone numbers validation-> (123) 234-1234.\ndb.vendor.phone_num.requires = IS_MATCH('((\\(\\d{3}\\) ?)|(\\d{3}-))?\\d{3}-\\d{4}',\n                            error_message ='not a valid phone number.')\ndb.vendor.address.requires = IS_NOT_EMPTY()\n\n\ndb.user.name.requires = IS_NOT_IN_DB(db, db.user.name)\ndb.user.email.requires = IS_EMAIL()\ndb.user.phone_num.requires = IS_MATCH('((\\(\\d{3}\\) ?)|(\\d{3}-))?\\d{3}-\\d{4}',\n                            error_message ='not a valid phone number.')\ndb.user.payment_info.requires = IS_NOT_EMPTY()\n\n\n\n\n\n\n\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/LC-3/Documents/CMPS183/Project/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/Users/LC-3/Documents/CMPS183/Project/web2py/applications/EasyCommerce/models/db.py", line 31, in <module>\n    Field)\n  File "/Users/LC-3/Documents/CMPS183/Project/web2py/gluon/packages/dal/pydal/base.py", line 834, in define_table\n    table = self.lazy_define_table(tablename,*fields,**args)\n  File "/Users/LC-3/Documents/CMPS183/Project/web2py/gluon/packages/dal/pydal/base.py", line 851, in lazy_define_table\n    table = table_class(self, tablename, *fields, **args)\n  File "/Users/LC-3/Documents/CMPS183/Project/web2py/gluon/packages/dal/pydal/objects.py", line 299, in __init__\n    field\nSyntaxError: define_table argument is not a Field or Table: <class \'pydal.objects.Field\'>\n'
+p11
+s.

@@ -18,6 +18,7 @@
 
     <!-- Custom CSS -->
     <link href={{=URL( 'static', 'css/sb-admin.css')}} rel="stylesheet">
+    <link href="{{=URL('static','css/w3.css')}}" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href={{=URL( 'static', 'css/plugins/morris.css')}}rel="stylesheet">
@@ -173,23 +174,32 @@
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Below are your posts
                             </li>
+                               <a class="w3-button w3-white w3-border w3-tiny" href="{{=URL("default","my_posts")}}#form_id">
+                         <b>New</b>
+                     </a>
+
                         </ol>
                     </div>
                 </div>
                 <div class="row">
 
                     {{for item in items:}}
-                        <div class="col-lg-5">
+                        <div class="col-lg-4">
                         <div class="w3-card-12">
                             <br>
                             {{if item.image:}}
-                                <img height="100px" src="{{=URL('download',args=item.image)}}">
+                                <img height="200px" src="{{=URL('download',args=item.image)}}" style="width: 100%">
                             {{else:}}
-                                <img height="100px" src="/EasyCommerce/static/ecommerce_1.jpg">
+                                <img  height="200px" src="/EasyCommerce/static/ecommerce_1.jpg">
                             {{pass}}
                                 <div class="w3-container w3-center">
-                                    <li>{{=item.title}}<a href="{{=URL("default","my_posts",args=[item.id])}}"> Edit</a></li>
-                                    <p>{{=item.description}}</p>
+                                    <br>
+                                    <p>{{=item.title}}
+                                        <a class="w3-button w3-white w3-border w3-tiny" href="{{=URL("default","my_posts",args=[item.id,])}}#form_id">
+                                            <b>Edit</b>
+                                        </a>
+                                    </p>
+
                                 </div>
                         </div>
                         </div>
@@ -213,7 +223,7 @@
                     </div>
                 </div>
                 <!-- Page Heading -->
-                <div class="row">
+                <div class="row" id="form_id">
                         <div class="col-lg-12">
                         {{=form}}
                         </div>

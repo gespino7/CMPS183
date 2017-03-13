@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+<link href="{{=URL('static', 'css/main.css')}}" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Rubik|Open+Sans" rel="stylesheet">
+
+<!--Creates a container for a single category. Each subsequent div represents
+    another row of clickable images in the vendor's store. -->
+<html>
+
+<a class="btn btn-info" href="{{=URL('default','vendor_add',args=[auth.user_id])}}">
+    Update Info
+</a>
+<a class="btn btn-warning" href="{{=URL('default','add_item')}}">
+    Add Items
+</a>
+
+{{i = 0}}
+<div id="section">
+    <h2 class="left_align"><u>All Stores</u></h2>
+    {{for stores in stores:}}
+        {{if i%4==0 or i==0:}}
+            <div id="img_row" class="container">
+        {{pass}}
+
+        <div id="img_block">
+            <a href="{{=URL('EasyCommerce','default','id',args=[stores.id])}}">
+                <img class="center" src="{{=URL('download', args=stores.banner)}}" />
+            <p class="left vertical">
+                <strong>{{=stores.business_name}}</strong>
+            </p>
+            </a>
+        </div>
+
+        {{i = i+1}}
+        <!-- Close row div if at end of row-->
+        {{if i%4==0:}}
+            </div>
+        {{pass}}
+    {{pass}}
+</div>
+</html>

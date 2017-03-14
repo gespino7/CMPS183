@@ -1,4 +1,5 @@
-{{extend 'layout.html'}}
+{{extend 'plugin_layouts/layouts/KeepitSimple.html'}}
+{{#extend 'layout.html'}}
 <h1>Choose type of user:</h1>
 <h2>{{ =(A("Vendor", _href=URL("vendor"))) }}</h2>
 <h3>{{ =(A("Buyer", _href=URL("buyer"))) }}</h3>

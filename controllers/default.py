@@ -10,10 +10,17 @@
 def index():
     # grid = SQLFORM.smartgrid(db.invoice)
     # return dict(grid = grid)
+    modify(SQLFORM(db.auth_user))
     form = SQLFORM(db.auth_user)
+    modify(form)
+    #modify(form)
     if form.process().accepted:
         response.flash = 'your login is accepted'
+        if (str(form.vars.User_Type) == "Vendor"):
+            response.flash = 'the user is a VENDOR'
+    return dict()
 
+def test_page():
     return dict()
 
 @auth.requires_login()
@@ -40,7 +47,7 @@ def give_create_permission(form):
     group_id = auth.id_group('Vendors')
     auth.add_permission(group_id)
 
-auth.settings.register_onaccept = give_create_permission
+#auth.settings.register_onaccept = give_create_permission
 
 #@auth.requires_membership('Buyers')
 def buyer():
@@ -123,6 +130,16 @@ def buyer_info():
     user_id = form.vars.id
     auth.add_membership(group_id, user_id)
 """
+
+def fn(form):
+    if (form.vars.User_Type == "Vendor"):
+        auth.settings.login_next=URL('vendor')
+        redirect(URL('vendor'))
+    else:
+        auth.settings.login_next=URL('buyer')
+
+auth.settings.login_onaccept.append(lambda form: fn(form))
+
 def user():
     """
     exposes:
@@ -143,6 +160,7 @@ def user():
     #auth.settings.register_onaccept = add_membership(user_id)
     #auth.settings.register_onaccept = __add_user_membership
     # already existing code
+    auth.settings.login_onaccept.append(lambda form: fn(form))
     return dict(form=auth())
 
 

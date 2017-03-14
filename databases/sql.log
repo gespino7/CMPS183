@@ -237,3 +237,61 @@ CREATE TABLE vendor(
     address CHAR(512),
     date TIMESTAMP
 );
+timestamp: 2017-03-08T19:04:03.192000
+ALTER TABLE auth_user ADD user_type CHAR(512);
+success!
+timestamp: 2017-03-08T19:04:03.382000
+CREATE TABLE vendor_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-03-08T19:04:03.525000
+CREATE TABLE user_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    payment_info CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-03-08T19:04:03.706000
+CREATE TABLE invoice_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    invoice CHAR(512),
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-08T19:04:03.834000
+CREATE TABLE cc(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    card_number CHAR(512),
+    security_code CHAR(512),
+    exp_date CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

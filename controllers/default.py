@@ -7,6 +7,7 @@
 # - user is required for authentication and authorization
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
+print ""
 def index():
     # grid = SQLFORM.smartgrid(db.invoice)
     # return dict(grid = grid)

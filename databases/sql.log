@@ -261,3 +261,55 @@ CREATE TABLE item(
     amount INTEGER
 );
 success!
+timestamp: 2017-03-13T23:06:21.653739
+CREATE TABLE vendor_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-03-13T23:06:21.666970
+CREATE TABLE user_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    email CHAR(512),
+    phone_num CHAR(512),
+    payment_info CHAR(512),
+    date TIMESTAMP
+);
+success!
+success!
+timestamp: 2017-03-13T23:06:21.695351
+CREATE TABLE invoice_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    invoice CHAR(512),
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-13T23:06:21.698480
+CREATE TABLE cc(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    card_number CHAR(512),
+    security_code CHAR(512),
+    exp_date CHAR(512)
+);
+success!
+timestamp: 2017-03-13T23:06:21.701072
+CREATE TABLE shopping_cart(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    buyer_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    item_name CHAR(512),
+    item_id CHAR(512),
+    price CHAR(512)
+);
+success!

@@ -66,10 +66,11 @@ def my_posts():
     return dict(form=form,items=items,invoices =invoices)
 
 #Allow vendor to see page only when sing in.
-@auth.requires_login()
+
 def vendor():
-    grid = SQLFORM.smartgrid(db.invoice)
-    return dict(grid = grid)
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.title)
+
+    return dict(items=items)
 
 @auth.requires_login()
 def manager():
@@ -99,7 +100,34 @@ def card():
     return dict(form=form)
 
 
+def shopping_cart_update():
+    if request.vars['adding']:
+        item = db.item[request.vars['adding']]
+        db.shopping_cart.insert(item_name=item.title,
+                               item_id=item.id,
+                               price=item.price
+                               )
+        print("Added.")
+        return
+    if request.vars['remove']:
 
+        item = db.item[request.vars['remove']]
+        db(db.shopping_cart.item_id ==item.id ).delete()
+
+        print("Removed")
+        return
+
+    item = db.item[request.vars['adding']]
+
+    if item.amount > 0:
+        newAmount = item.amount
+        newAmount -=1
+        item.update_record(amount=newAmount)
+
+        return
+    else:
+        response.flash = 'Out of Stock'
+    return request.vars
 
 
 def user():
@@ -128,4 +156,7 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
-
+def shoppingcart():
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.title)
+    shopping_cart_items = db(db.shopping_cart.buyer_id == auth.user_id).select()
+    return dict(items=items,shopping_cart_items=shopping_cart_items)

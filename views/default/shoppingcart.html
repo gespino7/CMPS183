@@ -43,16 +43,22 @@
     <script>
         $(document).ready(function(){
             console.log("Start Welcome.")
-            $(".w3-button#add").click(function(){
+
+              $(".w3-button#remove").click(function(){
                 var x  = this.value;
                 $.get("shopping_cart_update",
-                        {adding:this.value},
+                        {remove:this.value},
                         function(data,status){
                     $(x).text(data)
-                    console.log("Add item: "+x)
+                    console.log("Removing item: "+x)
 		        });
-            });
 
+                    console.log(x)
+                  this.parentElement.style.display='none'
+
+
+
+            });
             /*
             $("#select_id1").change(function () {
                 var x = "/easycommerce/default/customer_orders?status="+this.value
@@ -175,7 +181,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                   <li>
+                    <li>
                         <a href="{{=URL('default','vendor')}}"><i class="fa fa-bar-chart"></i> Menu</a>
                     </li>
                     <li>
@@ -190,9 +196,10 @@
                     </li>
 
 
-                      <li>
+                     <li>
                         <a href="{{=URL('default','shoppingcart')}}"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart</a>
                     </li>
+
 
 
 
@@ -202,35 +209,24 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div class="w3-container">
+<div class="w3-container w3-padding-64">
+<div class>
+     <button type="number" class="w3-button w3-tiny w3-red " id="checkout">checkout</button>
+</div>
 
-            <div class="container-fluid">
-                <div class="w3-container w3-padding-64 " id="menu">
-                    <div class="w3-row-padding">
-                        {{for item in items:}}
-                        <div class="item col-lg-4" id="{{=item.id}}">
-                            <img src="{{=URL('download', args=item.image)}}" class="w3-margin-right" style="width:100%">
-                            <div class="w3-card-2" style="width:100%">
-                                <header class="w3-container w3-white">
-                                    <h3>{{=item.title}}</h3>
-                                </header>
-                                <div class="w3-container w3-white">
-                                    <button type="number" class="w3-button w3-tiny w3-red " value="{{=item.id}}" id="add"><i class="fa fa-plus" aria-hidden="true"></i>
-                                    Add</button>
-                                    <div class="w3-container w3-white w3-right" id="price">
-                                        <p type="number" id="value">{{=item.price}}</p>
-                                        <br>
-                                    </div>
-                                    <div class="w3-container" id="description">
-                                        <p>{{=item.description}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{pass}}
-                    </div>
+  <ul class="w3-ul w3-card-4 w3-white">
+      {{for shopping_cart_item in shopping_cart_items:}}
+            <li class="w3-padding-16">
+              <button type="number" class="w3-button w3-padding w3-margin-right w3-tiny w3-red  " value="{{=shopping_cart_item.item_id}}" id="remove"><i class="fa fa-times" aria-hidden="true"></i></button>
+              <span class="w3-xlarge">{{=shopping_cart_item.item_name}}</span><br>
+              <span >${{=shopping_cart_item.price}}</span>
+            </li>
+        {{pass}}
+  </ul>
+  </ul>
+</div>
 
-
+                <!-- /.container-fluid -->
 
             </div>
             <!-- /#page-wrapper -->
@@ -252,4 +248,5 @@
 </body>
 
 </html>
+
 

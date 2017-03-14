@@ -22,6 +22,7 @@
     <!-- Custom Fonts -->
     <link href="{{=URL('static','font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
 </head>
@@ -71,14 +72,6 @@
             <a href="#services" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
     </header>
-
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-bottom">
-            <h1>Take Your Business Online </h1>
-        </div>
-    </aside>
-
 
 
     <!-- Services -->
@@ -153,42 +146,7 @@
     </section>
 
     <!--Section Details-->
-    <section id="details" class="details">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <div class="row">
-                        <div id="section1">
-                            <h2><strong>Vendor Analytics</strong></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a dui facilisis, malesuada sapien et, sagittis felis. Nam dictum ipsum et ligula convallis luctus. Nulla elementum vitae urna ut molestie. Cras eget nulla luctus, rhoncus eros sed, aliquam nisi. Nullam sagittis condimentum pretium. Aliquam erat volutpat. Aenean vitae lobortis sapien. Praesent condimentum ex sed lobortis vulputate. Proin mi enim, blandit ac erat at, hendrerit tempor mauris. Nam volutpat vitae augue id pellentesque.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div id="section2">
-                            <h2><strong>Navigation Services</strong></h2>
-                            <p>Nunc interdum nibh velit, at tristique nisi bibendum in. Morbi aliquet, orci et dapibus eleifend, tellus metus volutpat neque, id auctor quam turpis eget odio. Nunc aliquet et leo non tristique. Vestibulum ac accumsan eros. Ut ut augue et erat consequat vestibulum. Suspendisse eget lacus in mi elementum accumsan. Aenean aliquam velit sit amet convallis tempus. In id felis nec nulla maximus sodales. Integer consectetur elementum convallis. Cras at tellus lobortis, posuere dui ut, condimentum diam.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div id="section3">
-                            <h2><strong>Online Payments</strong></h2>
-                            <p>Morbi sit amet aliquam enim, eget euismod lectus. Nam mollis tincidunt libero ut aliquam. Suspendisse sed volutpat lacus. Cras aliquet vel risus sed finibus. Suspendisse porta dictum elit. Suspendisse urna dui, feugiat eget tortor ac, tincidunt accumsan tortor. Suspendisse suscipit tellus id nunc fermentum gravida. Sed vel nulla sit amet erat luctus semper in ac elit. Nullam sapien justo, iaculis ac erat quis, bibendum fermentum felis. Nulla quis turpis hendrerit, mattis tortor vel, condimentum nisi. Aenean vitae suscipit enim, sed tempor nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam dapibus erat sed metus accumsan fringilla.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div id="section4">
-                            <h2><strong>Online Ordering</strong></h2>
-                            <p>Ut sed egestas eros. Pellentesque consequat tempor justo id fringilla. Phasellus efficitur massa eget lorem semper tincidunt. Sed dolor nunc, scelerisque in congue id, sollicitudin id urna. Sed vel consectetur diam. Phasellus magna eros, blandit eget neque quis, varius tincidunt est. Pellentesque accumsan, turpis nec volutpat consequat, risus odio rutrum odio, ut gravida lorem nisl in nisi. Vestibulum id tempor felis. Ut scelerisque vestibulum malesuada. Donec luctus cursus lorem id viverra.</p>
-                        </div>
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio bg-portfolio">
@@ -237,18 +195,7 @@
         <!-- /.container -->
     </section>
 
-    <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
-                </div>
-            </div>
-        </div>
-    </aside>
+
 
     <!-- Map -->
     <section id="contact" class="map">
@@ -326,6 +273,8 @@
             }
         });
     });
+
+
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
@@ -350,6 +299,7 @@
                 });
             }
         }
+
     });
     // Disable Google Maps scrolling
     // See http://stackoverflow.com/a/25904582/1607849
@@ -371,6 +321,7 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+
     </script>
 
 </body>

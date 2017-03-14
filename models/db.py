@@ -63,6 +63,12 @@ db.define_table('cc',
                 Field('security_code'),
                 Field('exp_date'))
 
+db.define_table('shopping_cart',
+                Field('buyer_id', 'reference auth_user', default=auth.user_id),
+                Field('item_name'),
+                Field('item_id'),
+                Field('price')
+                )
 
 #User_ contact info.
 

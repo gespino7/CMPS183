@@ -15,6 +15,27 @@ auth.settings.extra_fields['auth_user'] = [Field('User_Type', requires=IS_IN_SET
 #auth.add_group('Vendors', 'description1')
 #auth.add_group('Buyers', 'description2')
 
+
+def fn(form):
+    if (form.vars.User_Type == "Vendor"):
+        #auth.settings.login_next=URL('vendor')
+        redirect(URL('vendor'))
+    else:
+        auth.settings.login_next=URL('buyer')
+
+auth.settings.login_onaccept.append(lambda form: fn(form))
+
+
+def modify(form):
+    auth.settings.login_onaccept.append(fn(form))
+
+
+def give_create_permission(form):
+    group_id = auth.id_group('Vendors')
+    auth.add_permission(group_id)
+
+#auth.settings.register_onaccept = give_create_permission
+
 def conditional_login(user_type):
     if (user_type == "vendor"):
         auth.settings.login_next = URL('vendor')
@@ -125,6 +146,8 @@ db.user_.payment_info.requires = IS_NOT_EMPTY()
 auth.settings.extra_fields['auth_user_']= [Field('phone')]
 auth.define_tables(username=False,signature=False,migrate =False)
 
+#auth.settings.login_onaccept.append(fn(auth_user))
+
 
 vendor_group_id = auth.add_group('Vendors')
 buyer_group_id = auth.add_group('Buyers')
@@ -140,7 +163,6 @@ def add_membership(user_ident):
         auth.add_membership(vendor_group_id, user_ident)
     else:
         auth.add_membership(buyer_group_id, user_ident)
-
 
 
 #auth.settings.register_onaccept = __add_user_membership

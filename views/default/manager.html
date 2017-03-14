@@ -144,16 +144,25 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Main page</a>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                     <li>
-                        <a href="{{=URL("default","manager")}}"><i class="fa fa-bar-chart"></i> My dashboard</a>
+
+
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>Add Items.<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">New Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Remove Item</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="{{=URL("default","customer_orders")}}"><i class="fa fa-usd"></i> Customer orders</a>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                     <li>
-                        <a href="{{=URL("default","my_posts.html")}}"><i class="fa fa-list"></i> My posts</a>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -232,8 +241,7 @@
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-
-                                        <div class="huge">{{=[invoice.status for invoice in invoices].count("confirmed")}}</div>
+                                        <div class="huge">{{=len(db(db.invoice.status == "confirmed").select())}}</div>
                                         <div>Confirmed Orders!</div>
                                     </div>
                                 </div>
@@ -256,7 +264,7 @@
                                         <i class="fa fa-bell fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">{{=[invoice.status for invoice in invoices].count("pending")}}</div>
+                                        <div class="huge">{{=len(db(db.invoice.status == "pending").select())}}</div>
                                         <div>Pending Orders!</div>
                                     </div>
                                 </div>

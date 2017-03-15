@@ -208,22 +208,11 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-<div class="w3-container w3-padding-64">
-<div class>
-     <button type="number" class="w3-button w3-tiny w3-red " id="checkout">checkout</button>
-</div>
-
-  <ul class="w3-ul w3-card-4 w3-white w3-animate-top">
-      {{for shopping_cart_item in shopping_cart_items:}}
-            <li class="w3-padding-16 ">
-              <button type="number" class="w3-button w3-padding w3-margin-right w3-tiny w3-red  " value="{{=shopping_cart_item.item_id}}" id="remove"><i class="fa fa-times" aria-hidden="true"></i></button>
-              <span class="w3-xlarge">{{=shopping_cart_item.item_name}}</span><br>
-              <span >${{=shopping_cart_item.price}}</span>
-            </li>
-        {{pass}}
-  </ul>
-  </ul>
-</div>
+            <div class="w3-container w3-padding-64 w3-white">
+            <h1>Credit card information</h1><br>
+            {{=form}}
+            <br>
+            </div>
 
                 <!-- /.container-fluid -->
 

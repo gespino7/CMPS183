@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>
+    .item_name>
         {{=db.auth_user[auth.user_id].first_name}} {{=db.auth_user[auth.user_id].last_name}}
-    </title>
+    <.item_name>
 
     <!-- Bootstrap Core CSS -->
     <link href={{=URL( 'static', 'css/bootstrap.min.css')}} rel="stylesheet">
@@ -194,7 +194,7 @@
                             {{pass}}
                                 <div class="w3-container w3-center">
                                     <br>
-                                    <p>{{=item.title}}
+                                    <p>{{=item.item_name}}
                                         <a class="w3-button w3-white w3-border w3-tiny" href="{{=URL("default","my_posts",args=[item.id,])}}#form_id">
                                             <b>Edit</b>
                                         </a>

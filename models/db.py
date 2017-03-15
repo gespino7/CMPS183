@@ -87,6 +87,11 @@ db.invoice.status.requires = IS_IN_SET(['pending','confirmed'])
 
 
 db.user_.payment_info.requires = IS_NOT_EMPTY()
+###############seller
+db.item.seller_id.writable = False
+db.item.title.requires = IS_NOT_EMPTY()
+db.item.amount.requires = IS_INT_IN_RANGE(0,None)
+db.item.price.requires = IS_NOT_EMPTY()
 ###############credit card
 db.cc.first_name.requires = IS_NOT_EMPTY()
 db.cc.last_name.requires = IS_NOT_EMPTY()

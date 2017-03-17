@@ -68,9 +68,11 @@ def my_posts():
             response.flash = 'please finish your comment'
     return dict(form=form,items=items,invoices =invoices)
 
-#Allow vendor to see page only when sing in.
 
+#Allow vendor to see page only when sing in.
+@auth.requires_login()
 def vendor():
+    #vendor = db.vendor_[request.args(0)]
     items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.item_name)
 
     return dict(items=items)
@@ -107,10 +109,11 @@ def stores():
    stores = db(db.vendor_).select().sort(lambda p: p.business_name)
    return dict(stores=stores)
 
+
 def shopping_cart_update():
     if request.vars['adding']:
         item = db.item[request.vars['adding']]
-        db.shopping_cart.insert(item_name=item.title,
+        db.shopping_cart.insert(item_name=item.item_name,
                                item_id=item.id,
                                price=item.price
                                )
@@ -164,6 +167,7 @@ def download():
     """
     return response.download(request, db)
 
+@auth.requires_login()
 
 def shoppingcart():
     items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.item_name)
@@ -175,7 +179,7 @@ def vendor_info():
     if form.accepts(request.vars, session):
         response.flash = T('new record inserted')
         #add_member(vendor_group_id, user_id)  # defined buyer_group_id and user_id at bottom of db.py
-        redirect(URL('vendor'))
+        redirect(URL('manager'))
     #else:
     #   response.flash = T('new record failed')
     return dict(form=form)
@@ -187,11 +191,15 @@ def buyer_info():
         #auth.add_membership(buyer_group_id, user_id) # defined buyer_group_id and user_id at bottom of db.py
         #auth.settings.register_onaccept = add_buyer(buyer_group_id, user_id)
         #add_member(buyer_group_id, user_id)
-        redirect(URL('buyer'))
+        redirect(URL('index'))
         #add_buyer(buyer_group_id, user_id)
     #else:
     #    response.flash = T('new record failed')
     return dict(form=form)
 
 def choose_type():
+    return dict()
+
+
+def input_info():
     return dict()

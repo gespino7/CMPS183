@@ -1,0 +1,135 @@
+timestamp: 2017-03-17T00:54:56.785826
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2017-03-17T00:54:56.788445
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2017-03-17T00:54:56.791409
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-03-17T00:54:56.794651
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2017-03-17T00:54:56.798156
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2017-03-17T00:54:56.801247
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2017-03-17T00:54:56.806247
+CREATE TABLE vendor_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    vendor_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    email CHAR(512),
+    phone_num CHAR(512),
+    banner CHAR(512),
+    business_name CHAR(512),
+    address CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-03-17T00:54:56.808993
+CREATE TABLE user_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    email CHAR(512),
+    phone_num CHAR(512),
+    payment_info CHAR(512),
+    date TIMESTAMP
+);
+success!
+timestamp: 2017-03-17T00:54:56.812520
+CREATE TABLE item(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    date_added TIMESTAMP,
+    item_name CHAR(512),
+    description CHAR(512),
+    image CHAR(512),
+    thumbnail CHAR(512),
+    price DOUBLE,
+    status CHAR(1),
+    category CHAR(512),
+    amount INTEGER
+);
+success!
+timestamp: 2017-03-17T00:54:56.815503
+CREATE TABLE invoice(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    customer_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    item_id CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-17T00:54:56.818287
+CREATE TABLE invoice_(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    seller CHAR(512),
+    customer CHAR(512),
+    amount CHAR(512),
+    date TIMESTAMP,
+    invoice CHAR(512),
+    status CHAR(512)
+);
+success!
+timestamp: 2017-03-17T00:54:56.820834
+CREATE TABLE cc(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(512),
+    last_name CHAR(512),
+    card_number CHAR(512),
+    security_code CHAR(512),
+    exp_date CHAR(512)
+);
+success!
+timestamp: 2017-03-17T00:54:56.823279
+CREATE TABLE shopping_cart(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    buyer_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    item_name CHAR(512),
+    item_id CHAR(512),
+    price CHAR(512)
+);
+success!

@@ -18,7 +18,10 @@ g
     """
     # grid = SQLFORM.smartgrid(db.invoice)
     # return dict(grid = grid)
-    return dict()
+    stores = db(db.vendor_).select().sort(lambda p: p.business_name)
+    return dict(stores=stores)
+
+
 
 @auth.requires_login()
 def customer_orders():
@@ -31,14 +34,48 @@ def customer_orders():
         print ("no status")
     return dict(invoices=invoices)
 
+@auth.requires_login()
+def my_posts():
+    invoices = db(db.invoice.seller_id == auth.user_id).select(orderby=db.invoice.date)
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.item_name)
+    if request.args(0):
+        item = db.item[request.args(0)]
+        form = SQLFORM(db.item,
+                       item,
+                       showid=False,
+                       deletable=True,
+                       submit_button="Update your post"
+                       )
+        if form.process(keepvalues=True).accepted:
+            response.flash = 'comment accepted'
+            redirect('/easycommerce/default/my_posts')
+        elif form.errors:
+            response.flash = 'please complete your post'
+        else:
+            response.flash = 'please finish your comment'
+    else:
+        form = SQLFORM(db.item,
+                       showid=False,
+                       submit_button="Create new post",
+
+                       );
+        if form.process(keepvalues=True).accepted:
+            response.flash = 'comment accepted'
+            redirect('/easycommerce/default/my_posts')
+        elif form.errors:
+            response.flash = 'please complete your post'
+        else:
+            response.flash = 'please finish your comment'
+    return dict(form=form,items=items,invoices =invoices)
 
 
 #Allow vendor to see page only when sing in.
 @auth.requires_login()
 def vendor():
-    grid = SQLFORM.smartgrid(db.invoice)
-    return  dict(grid = grid)
+    #vendor = db.vendor_[request.args(0)]
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.item_name)
 
+    return dict(items=items)
 
 @auth.requires_login()
 def manager():
@@ -56,19 +93,51 @@ def status_update():
         invoice.update_record(status = "pending")
     return invoice.status
 
-def card():
-    fields = ['first_name',  'last_name', 'card_number','security_code', 'exp_date']
+def checkout():
+    fields = ['first_name', 'last_name', 'card_number', 'security_code', 'exp_date']
     form = SQLFORM(db.cc, fields=fields)
     if form.process().accepted:
         response.flash = 'Your credit card is confirmed'
-
+    elif form.errors:
+        response.flash = 'please complete your changes'
     else:
-        response.flash = 'please fill out your credit card information'
-      # redirect(URL("index"))
+        response.flash = 'Please edit form'
+        # redirect(URL("index"))
     return dict(form=form)
 
+def stores():
+   stores = db(db.vendor_).select().sort(lambda p: p.business_name)
+   return dict(stores=stores)
 
 
+def shopping_cart_update():
+    if request.vars['adding']:
+        item = db.item[request.vars['adding']]
+        db.shopping_cart.insert(item_name=item.item_name,
+                               item_id=item.id,
+                               price=item.price
+                               )
+        print("Added.")
+        return
+    if request.vars['remove']:
+
+        item = db.item[request.vars['remove']]
+        db(db.shopping_cart.item_id ==item.id ).delete()
+
+        print("Removed")
+        return
+
+    item = db.item[request.vars['adding']]
+
+    if item.amount > 0:
+        newAmount = item.amount
+        newAmount -=1
+        item.update_record(amount=newAmount)
+
+        return
+    else:
+        response.flash = 'Out of Stock'
+    return request.vars
 
 
 def user():
@@ -98,5 +167,39 @@ def download():
     """
     return response.download(request, db)
 
+@auth.requires_login()
+
+def shoppingcart():
+    items = db(db.item.seller_id == auth.user_id).select(orderby = db.item.item_name)
+    shopping_cart_items = db(db.shopping_cart.buyer_id == auth.user_id).select()
+    return dict(items=items,shopping_cart_items=shopping_cart_items)
+
+def vendor_info():
+    form = SQLFORM(db.vendor_)
+    if form.accepts(request.vars, session):
+        response.flash = T('new record inserted')
+        #add_member(vendor_group_id, user_id)  # defined buyer_group_id and user_id at bottom of db.py
+        redirect(URL('manager'))
+    #else:
+    #   response.flash = T('new record failed')
+    return dict(form=form)
+
+def buyer_info():
+    form = SQLFORM(db.user_)
+    if form.accepts(request.vars, session):
+        response.flash = T('new record inserted')
+        #auth.add_membership(buyer_group_id, user_id) # defined buyer_group_id and user_id at bottom of db.py
+        #auth.settings.register_onaccept = add_buyer(buyer_group_id, user_id)
+        #add_member(buyer_group_id, user_id)
+        redirect(URL('index'))
+        #add_buyer(buyer_group_id, user_id)
+    #else:
+    #    response.flash = T('new record failed')
+    return dict(form=form)
+
+def choose_type():
+    return dict()
 
 
+def input_info():
+    return dict()
